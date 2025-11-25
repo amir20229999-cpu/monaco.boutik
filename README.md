@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -25,6 +25,7 @@
             --silver: #c0c0c0;
             --whatsapp: #25D366;
             --telegram: #0088cc;
+            --info: #17a2b8;
         }
 
         body {
@@ -149,6 +150,11 @@
 
         .btn-telegram {
             background: linear-gradient(45deg, var(--telegram), #006699);
+            color: white;
+        }
+
+        .btn-info {
+            background: linear-gradient(45deg, var(--info), #138496);
             color: white;
         }
 
@@ -602,6 +608,51 @@
             color: var(--gold);
         }
 
+        /* استایل‌های جدید برای مدیریت کاربران */
+        .users-management {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-right: 5px solid var(--info);
+        }
+
+        .users-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .users-table th, .users-table td {
+            padding: 1rem;
+            text-align: right;
+            border-bottom: 1px solid #eee;
+        }
+
+        .users-table th {
+            background: var(--secondary);
+            color: white;
+            font-weight: 600;
+        }
+
+        .users-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .user-count {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -626,6 +677,14 @@
             
             .logo {
                 font-size: 1.8rem;
+            }
+            
+            .users-table {
+                font-size: 0.8rem;
+            }
+            
+            .users-table th, .users-table td {
+                padding: 0.5rem;
             }
         }
 
@@ -799,6 +858,12 @@
                         خروجی گرفتن از محصولات
                     </button>
                 </div>
+            </div>
+
+            <div class="users-management">
+                <h3><i class="fas fa-users"></i> مدیریت کاربران</h3>
+                <div class="user-count" id="userCount">0 کاربر</div>
+                <div id="usersTableContainer"></div>
             </div>
 
             <div id="adminProductGrid"></div>
@@ -1010,6 +1075,56 @@
                 localStorage.removeItem('current_user');
             }
         });
+
+        // نمایش کاربران برای ادمین
+        function displayUsers() {
+            const usersTableContainer = document.getElementById('usersTableContainer');
+            const userCount = document.getElementById('userCount');
+            
+            if (users.length === 0) {
+                usersTableContainer.innerHTML = `
+                    <div class="empty-message" style="padding: 2rem;">
+                        <i class="fas fa-users" style="font-size: 3rem; color: #ddd; margin-bottom: 1rem;"></i>
+                        <h3>هنوز کاربری ثبت‌نام نکرده است</h3>
+                    </div>
+                `;
+                userCount.textContent = '0 کاربر';
+                return;
+            }
+            
+            userCount.textContent = `${users.length} کاربر`;
+            
+            let tableHTML = `
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>ردیف</th>
+                            <th>نام کاربر</th>
+                            <th>ایمیل</th>
+                            <th>تاریخ ثبت‌نام</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            users.forEach((user, index) => {
+                tableHTML += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${user.name}</td>
+                        <td>${user.email}</td>
+                        <td>${new Date(user.registrationDate || Date.now()).toLocaleDateString('fa-IR')}</td>
+                    </tr>
+                `;
+            });
+            
+            tableHTML += `
+                    </tbody>
+                </table>
+            `;
+            
+            usersTableContainer.innerHTML = tableHTML;
+        }
 
         // توابع همگام‌سازی بین دستگاه‌ها
         function exportProducts() {
@@ -1258,11 +1373,12 @@
             const password = document.getElementById('loginPassword').value;
             
             if (email === "admin_shaian@gmail.com" && password === "shaian_112233") {
-                currentUser = { name: 'امیر', email: email, isAdmin: true };
+                currentUser = { name: 'ادمین', email: email, isAdmin: true };
                 localStorage.setItem('current_user', JSON.stringify(currentUser));
                 updateUI();
                 displayProducts();
-                alert("خوش آمدید امیر!");
+                displayUsers(); // نمایش کاربران بعد از لاگین
+                alert("خوش آمدید ادمین!");
                 closeModals();
             } else {
                 const user = users.find(u => u.email === email && u.password === password);
@@ -1290,7 +1406,12 @@
                 return;
             }
             
-            const newUser = { name, email, password };
+            const newUser = { 
+                name, 
+                email, 
+                password,
+                registrationDate: new Date().toISOString()
+            };
             users.push(newUser);
             localStorage.setItem('monaco_users', JSON.stringify(users));
             
@@ -1364,6 +1485,7 @@
                 if (currentUser.isAdmin) {
                     adminBtn.style.display = 'block';
                     adminPanel.style.display = 'block';
+                    displayUsers(); // نمایش کاربران برای ادمین
                 } else {
                     adminBtn.style.display = 'none';
                     adminPanel.style.display = 'none';
