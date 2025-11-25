@@ -44,6 +44,48 @@
             overflow-x: hidden;
         }
 
+        /* هشدار حالت عمودی */
+        .orientation-alert {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .orientation-alert i {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            color: var(--gold);
+            animation: rotate 2s infinite;
+        }
+        
+        .orientation-alert h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+        
+        .orientation-alert p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        @keyframes rotate {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(90deg); }
+        }
+
         header {
             background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
             padding: 1rem;
@@ -865,9 +907,30 @@
             margin-bottom: 1rem;
             font-size: 0.9rem;
         }
+
+        @media (orientation: portrait) and (max-width: 768px) {
+            .orientation-alert {
+                display: flex;
+            }
+            
+            body {
+                overflow: hidden;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- هشدار حالت عمودی -->
+    <div class="orientation-alert" id="orientationAlert">
+        <i class="fas fa-mobile-alt"></i>
+        <h2>لطفاً گوشی خود را افقی کنید</h2>
+        <p>برای تجربه بهتر مشاهده سایت، لطفاً گوشی خود را به حالت افقی بچرخانید</p>
+        <div class="btn btn-gold">
+            <i class="fas fa-sync-alt"></i>
+            بچرخانید
+        </div>
+    </div>
+
     <div class="container">
         <header>
             <nav class="navbar">
@@ -1179,6 +1242,26 @@
         let products = JSON.parse(localStorage.getItem('monaco_products')) || [];
         let currentUser = JSON.parse(localStorage.getItem('current_user'));
 
+        // تشخیص حالت صفحه و نمایش هشدار
+        function checkOrientation() {
+            const alert = document.getElementById('orientationAlert');
+            if (window.innerHeight > window.innerWidth && window.innerWidth <= 768) {
+                alert.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            } else {
+                alert.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // هنگام لود صفحه و تغییر سایز چک کن
+        window.addEventListener('load', checkOrientation);
+        window.addEventListener('resize', checkOrientation);
+        window.addEventListener('orientationchange', checkOrientation);
+        
+        // همچنین هر 2 ثانیه چک کن (برای برخی دستگاه‌ها)
+        setInterval(checkOrientation, 2000);
+
         // تابع برای منوی همبرگری
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
@@ -1262,9 +1345,6 @@
             
             usersTableContainer.innerHTML = tableHTML;
         }
-
-        // بقیه توابع جاوااسکریپت مانند قبل...
-        // [کدهای جاوااسکریپت قبلی اینجا قرار می‌گیرند]
 
         // مدیر هنگام بسته شدن صفحه logout شود
         window.addEventListener('beforeunload', function() {
