@@ -1257,7 +1257,7 @@
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
             
-            if (email === "amir20229999@gmail.com" && password === "amir2022") {
+            if (email === "admin_shaian@gmail.com" && password === "shaian_112233") {
                 currentUser = { name: 'امیر', email: email, isAdmin: true };
                 localStorage.setItem('current_user', JSON.stringify(currentUser));
                 updateUI();
