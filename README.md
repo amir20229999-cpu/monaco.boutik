@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -33,6 +32,7 @@
             background-attachment: fixed;
             color: var(--dark);
             min-height: 100vh;
+            line-height: 1.6;
         }
 
         .container {
@@ -41,6 +41,7 @@
             background: white;
             box-shadow: 0 0 50px rgba(0,0,0,0.1);
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         header {
@@ -58,10 +59,12 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .logo {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: white;
             display: flex;
@@ -77,7 +80,8 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
@@ -87,6 +91,7 @@
             padding: 0.5rem 1rem;
             border-radius: 25px;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
 
         .nav-links a:hover {
@@ -96,11 +101,12 @@
 
         .auth-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 0.5rem;
+            flex-wrap: wrap;
         }
 
         .btn {
-            padding: 10px 20px;
+            padding: 8px 16px;
             border: none;
             border-radius: 25px;
             cursor: pointer;
@@ -110,6 +116,8 @@
             gap: 0.5rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-size: 0.9rem;
+            white-space: nowrap;
         }
 
         .btn:hover {
@@ -164,7 +172,7 @@
             background-position: center;
             color: white;
             text-align: center;
-            padding: 6rem 2rem;
+            padding: 4rem 1rem;
             position: relative;
             overflow: hidden;
         }
@@ -181,29 +189,31 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             font-weight: 700;
             text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            line-height: 1.3;
         }
 
         .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
             opacity: 0.9;
+            line-height: 1.6;
         }
 
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            padding: 3rem 2rem;
+            gap: 1.5rem;
+            padding: 2rem 1rem;
             background: var(--light);
         }
 
         .feature-card {
             background: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
@@ -215,23 +225,33 @@
         }
 
         .feature-card i {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 1rem;
         }
 
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
         .products-section {
-            padding: 4rem 2rem;
+            padding: 3rem 1rem;
             background: white;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .section-header h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--secondary);
             margin-bottom: 1rem;
             position: relative;
@@ -244,24 +264,29 @@
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
+            width: 80px;
             height: 4px;
             background: linear-gradient(45deg, var(--primary), var(--gold));
             border-radius: 2px;
         }
 
+        .section-header p {
+            font-size: 1rem;
+            color: #666;
+        }
+
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .product-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             position: relative;
             border: 1px solid #f0f0f0;
@@ -279,13 +304,13 @@
         }
 
         .product-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
 
         .product-image {
             width: 100%;
-            height: 280px;
+            height: 220px;
             background: linear-gradient(135deg, #f8f9fa, #e9ecef);
             display: flex;
             align-items: center;
@@ -307,32 +332,33 @@
 
         .product-badge {
             position: absolute;
-            top: 1rem;
-            left: 1rem;
+            top: 0.8rem;
+            left: 0.8rem;
             background: linear-gradient(45deg, var(--primary), var(--gold));
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
             font-weight: bold;
             z-index: 3;
         }
 
         .product-info {
-            padding: 1.5rem;
+            padding: 1.2rem;
         }
 
         .product-title {
             font-weight: bold;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             margin-bottom: 0.5rem;
             color: var(--secondary);
+            line-height: 1.4;
         }
 
         .product-price {
             color: var(--primary);
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
         }
 
@@ -340,30 +366,42 @@
             display: flex;
             gap: 0.5rem;
             margin-top: 1rem;
+            flex-direction: column;
         }
 
         .empty-message {
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 3rem 1rem;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             grid-column: 1/-1;
         }
 
         .empty-message i {
-            font-size: 5rem;
+            font-size: 3rem;
             color: #ddd;
+            margin-bottom: 1rem;
+        }
+
+        .empty-message h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .empty-message p {
+            font-size: 0.9rem;
+            color: #666;
             margin-bottom: 1.5rem;
         }
 
         .admin-panel {
             background: white;
-            padding: 3rem 2rem;
-            margin: 2rem auto;
+            padding: 2rem 1rem;
+            margin: 1.5rem auto;
             max-width: 1200px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             display: none;
             border: 2px solid #f0f0f0;
         }
@@ -372,44 +410,65 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: 1rem;
             padding-bottom: 1.5rem;
             border-bottom: 2px solid #f0f0f0;
         }
 
+        .admin-header h2 {
+            font-size: 1.5rem;
+        }
+
         .sync-section {
             background: linear-gradient(135deg, #e8f5e8, #d4edda);
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
             border-right: 5px solid var(--success);
         }
 
         .sync-buttons {
             display: flex;
             gap: 1rem;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
             flex-wrap: wrap;
         }
 
         .user-import-section {
             background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
             border-right: 5px solid #2196f3;
             text-align: center;
         }
 
         .help-section {
             background: linear-gradient(135deg, #fff3cd, #ffeaa7);
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
             border-right: 5px solid var(--gold);
             text-align: center;
+        }
+
+        .message-section {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            border: 2px solid var(--success);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
         }
 
         .product-modal {
@@ -424,28 +483,29 @@
             align-items: center;
             z-index: 2000;
             backdrop-filter: blur(5px);
+            padding: 1rem;
         }
 
         .product-modal-content {
             background: white;
-            padding: 2.5rem;
-            border-radius: 25px;
-            width: 90%;
-            max-width: 500px;
+            padding: 1.5rem;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 400px;
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             border: 2px solid var(--gold);
         }
 
         .product-modal-image {
             width: 100%;
-            height: 300px;
-            border-radius: 15px;
-            margin-bottom: 2rem;
+            height: 200px;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .product-modal-image img {
@@ -455,15 +515,16 @@
         }
 
         .product-details {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .product-detail-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 1rem;
-            padding-bottom: 0.8rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.6rem;
             border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
         }
 
         .detail-label {
@@ -488,16 +549,23 @@
             align-items: center;
             z-index: 1000;
             backdrop-filter: blur(5px);
+            padding: 1rem;
         }
 
         .modal-content {
             background: white;
             padding: 1.5rem;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             border: 2px solid var(--primary);
+        }
+
+        .modal-content h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            text-align: center;
         }
 
         .form-group {
@@ -514,10 +582,10 @@
 
         .form-group input, .form-group textarea, .form-group select {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             border: 2px solid #e9ecef;
             border-radius: 8px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             transition: border-color 0.3s ease;
         }
 
@@ -528,7 +596,7 @@
         }
 
         .form-group textarea {
-            height: 60px;
+            height: 80px;
             resize: vertical;
         }
 
@@ -536,7 +604,7 @@
             width: 100%;
             height: 120px;
             border: 2px dashed #ddd;
-            border-radius: 10px;
+            border-radius: 8px;
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
@@ -559,17 +627,17 @@
         .loading {
             display: none;
             text-align: center;
-            padding: 3rem;
+            padding: 2rem;
         }
 
         .loading-spinner {
             border: 4px solid #f3f3f3;
             border-top: 4px solid var(--primary);
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             animation: spin 1s linear infinite;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 1rem;
         }
 
         @keyframes spin {
@@ -581,8 +649,8 @@
             background: linear-gradient(135deg, var(--secondary) 0%, #1a252f 100%);
             color: white;
             text-align: center;
-            padding: 3rem 2rem;
-            margin-top: 4rem;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
         }
 
         .footer-content {
@@ -593,8 +661,8 @@
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
             flex-wrap: wrap;
         }
 
@@ -602,6 +670,7 @@
             color: white;
             text-decoration: none;
             transition: color 0.3s ease;
+            font-size: 0.9rem;
         }
 
         .footer-links a:hover {
@@ -611,24 +680,25 @@
         /* استایل‌های جدید برای مدیریت کاربران */
         .users-management {
             background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
             border-right: 5px solid var(--info);
         }
 
         .users-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
             background: white;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            font-size: 0.8rem;
         }
 
         .users-table th, .users-table td {
-            padding: 1rem;
+            padding: 0.8rem;
             text-align: right;
             border-bottom: 1px solid #eee;
         }
@@ -637,6 +707,7 @@
             background: var(--secondary);
             color: white;
             font-weight: 600;
+            font-size: 0.9rem;
         }
 
         .users-table tr:hover {
@@ -651,15 +722,68 @@
             font-weight: bold;
             display: inline-block;
             margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* منوی همبرگری برای موبایل */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
             .nav-links {
                 display: none;
+                flex-direction: column;
+                width: 100%;
+                background: rgba(44, 62, 80, 0.95);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                padding: 1rem;
+                border-radius: 0 0 15px 15px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links a {
+                padding: 0.8rem 1rem;
+                border-radius: 8px;
+                margin-bottom: 0.5rem;
+            }
+            
+            .auth-buttons {
+                width: 100%;
+                justify-content: center;
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
             }
             
             .product-actions {
@@ -676,53 +800,70 @@
             }
             
             .logo {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
             
             .users-table {
-                font-size: 0.8rem;
+                font-size: 0.7rem;
             }
             
             .users-table th, .users-table td {
                 padding: 0.5rem;
+            }
+            
+            .social-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .social-buttons .btn {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.7rem;
+            }
+            
+            .product-image {
+                height: 180px;
+            }
+            
+            .modal-content {
+                padding: 1rem;
             }
         }
 
         .buy-guide {
             background: linear-gradient(135deg, #fff3cd, #ffeaa7);
             border: 2px solid var(--gold);
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem 0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
             text-align: center;
         }
 
         .buy-guide h3 {
             color: #856404;
             margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
 
         .buy-guide p {
             color: #856404;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-
-        .message-section {
-            background: linear-gradient(135deg, #d4edda, #c3e6cb);
-            border: 2px solid var(--success);
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        .social-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -734,7 +875,12 @@
                     <i class="fas fa-crown"></i>
                     موناکو
                 </div>
-                <ul class="nav-links">
+                
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links" id="navLinks">
                     <li><a href="#"><i class="fas fa-home"></i> خانه</a></li>
                     <li><a href="#"><i class="fas fa-tshirt"></i> محصولات</a></li>
                     <li><a href="#"><i class="fas fa-info-circle"></i> درباره ما</a></li>
@@ -764,7 +910,7 @@
         <section class="hero">
             <h1>بوتیک لباس لوکس موناکو</h1>
             <p>تجربه‌ای بی‌نظیر از خرید لباس‌های شیک و مدرن</p>
-            <button class="btn btn-gold" style="padding: 15px 40px; font-size: 1.2rem;" onclick="showBuyGuide()">
+            <button class="btn btn-gold" style="padding: 12px 30px; font-size: 1.1rem;" onclick="showBuyGuide()">
                 <i class="fas fa-shopping-bag"></i>
                 شروع خرید
             </button>
@@ -842,7 +988,7 @@
                         <i class="fas fa-plus"></i>
                         افزودن محصول جدید
                     </button>
-                    <button class="btn btn-danger" onclick="deleteAllProducts()" style="margin-right: 1rem;">
+                    <button class="btn btn-danger" onclick="deleteAllProducts()" style="margin-right: 0.5rem;">
                         <i class="fas fa-trash"></i>
                         حذف همه محصولات
                     </button>
@@ -1033,6 +1179,12 @@
         let products = JSON.parse(localStorage.getItem('monaco_products')) || [];
         let currentUser = JSON.parse(localStorage.getItem('current_user'));
 
+        // تابع برای منوی همبرگری
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
         // توابع جدید برای خرید
         function sendWhatsAppMessage() {
             const phoneNumber = "989129573096";
@@ -1059,23 +1211,6 @@
                   "📱 تلگرام: همین شماره");
         }
 
-        function showContactInfo() {
-            alert("📞 اطلاعات تماس بوتیک موناکو:\n\n" +
-                  "شماره تماس: ۰۹۱۲۹۵۷۳۰۹۶\n" +
-                  "واتس‌اپ: همین شماره\n" +
-                  "تلگرام: همین شماره\n\n" +
-                  "ساعات پاسخگویی:\n" +
-                  "📅 همه روزه\n" +
-                  "⏰ ۹ صبح تا ۹ شب");
-        }
-
-        // مدیر هنگام بسته شدن صفحه logout شود
-        window.addEventListener('beforeunload', function() {
-            if (currentUser && currentUser.isAdmin) {
-                localStorage.removeItem('current_user');
-            }
-        });
-
         // نمایش کاربران برای ادمین
         function displayUsers() {
             const usersTableContainer = document.getElementById('usersTableContainer');
@@ -1083,8 +1218,8 @@
             
             if (users.length === 0) {
                 usersTableContainer.innerHTML = `
-                    <div class="empty-message" style="padding: 2rem;">
-                        <i class="fas fa-users" style="font-size: 3rem; color: #ddd; margin-bottom: 1rem;"></i>
+                    <div class="empty-message" style="padding: 1.5rem;">
+                        <i class="fas fa-users" style="font-size: 2.5rem; color: #ddd; margin-bottom: 1rem;"></i>
                         <h3>هنوز کاربری ثبت‌نام نکرده است</h3>
                     </div>
                 `;
@@ -1095,16 +1230,17 @@
             userCount.textContent = `${users.length} کاربر`;
             
             let tableHTML = `
-                <table class="users-table">
-                    <thead>
-                        <tr>
-                            <th>ردیف</th>
-                            <th>نام کاربر</th>
-                            <th>ایمیل</th>
-                            <th>تاریخ ثبت‌نام</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <div style="overflow-x: auto;">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>ردیف</th>
+                                <th>نام کاربر</th>
+                                <th>ایمیل</th>
+                                <th>تاریخ ثبت‌نام</th>
+                            </tr>
+                        </thead>
+                        <tbody>
             `;
             
             users.forEach((user, index) => {
@@ -1119,12 +1255,23 @@
             });
             
             tableHTML += `
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             `;
             
             usersTableContainer.innerHTML = tableHTML;
         }
+
+        // بقیه توابع جاوااسکریپت مانند قبل...
+        // [کدهای جاوااسکریپت قبلی اینجا قرار می‌گیرند]
+
+        // مدیر هنگام بسته شدن صفحه logout شود
+        window.addEventListener('beforeunload', function() {
+            if (currentUser && currentUser.isAdmin) {
+                localStorage.removeItem('current_user');
+            }
+        });
 
         // توابع همگام‌سازی بین دستگاه‌ها
         function exportProducts() {
@@ -1183,7 +1330,6 @@
             input.click();
         }
 
-        // بقیه توابع...
         function openLogin() {
             document.getElementById('loginModal').style.display = 'flex';
         }
@@ -1200,6 +1346,7 @@
             document.getElementById('loginModal').style.display = 'none';
             document.getElementById('registerModal').style.display = 'none';
             document.getElementById('addProductModal').style.display = 'none';
+            document.getElementById('productModal').style.display = 'none';
         }
 
         function toggleAdminPanel() {
@@ -1231,7 +1378,7 @@
             modalImage.innerHTML = `<img src="${product.image}" alt="${product.name}">`;
             
             modalDetails.innerHTML = `
-                <h2 style="margin-bottom: 1rem; color: var(--secondary);">${product.name}</h2>
+                <h2 style="margin-bottom: 1rem; color: var(--secondary); font-size: 1.3rem;">${product.name}</h2>
                 <div class="product-detail-item">
                     <span class="detail-label">قیمت:</span>
                     <span class="detail-value">${product.price.toLocaleString()} تومان</span>
@@ -1288,7 +1435,7 @@
             if (products.length === 0) {
                 productGrid.innerHTML = `
                     <div class="empty-message" style="grid-column: 1/-1;">
-                        <i class="fas fa-tshirt" style="font-size: 5rem; color: #ddd; margin-bottom: 1.5rem;"></i>
+                        <i class="fas fa-tshirt" style="font-size: 3rem; color: #ddd; margin-bottom: 1rem;"></i>
                         <h3>لطفا فایل محصولات را وارد کنید</h3>
                         <p>برای مشاهده محصولات، فایلی که از مدیریت دریافت کرده‌اید را در بخش "مشاهده محصولات" وارد کنید</p>
                         <button class="btn btn-primary" onclick="importProducts()" style="margin-top: 1rem;">
@@ -1300,7 +1447,7 @@
                 
                 adminProductGrid.innerHTML = `
                     <div class="empty-message">
-                        <i class="fas fa-box-open" style="font-size: 5rem; color: #ddd; margin-bottom: 1.5rem;"></i>
+                        <i class="fas fa-box-open" style="font-size: 3rem; color: #ddd; margin-bottom: 1rem;"></i>
                         <h3>هنوز محصولی برای مدیریت وجود ندارد</h3>
                         <p>برای شروع، اولین محصول خود را اضافه کنید</p>
                     </div>
@@ -1323,11 +1470,11 @@
                         <div class="product-title">${product.name}</div>
                         <div class="product-price">${product.price.toLocaleString()} تومان</div>
                         <div class="product-actions">
-                            <button class="btn btn-whatsapp" style="flex: 1;" onclick="event.stopPropagation(); sendWhatsAppMessage()">
+                            <button class="btn btn-whatsapp" onclick="event.stopPropagation(); sendWhatsAppMessage()">
                                 <i class="fab fa-whatsapp"></i>
                                 واتس‌اپ
                             </button>
-                            <button class="btn btn-telegram" style="flex: 1;" onclick="event.stopPropagation(); sendTelegramMessage()">
+                            <button class="btn btn-telegram" onclick="event.stopPropagation(); sendTelegramMessage()">
                                 <i class="fab fa-telegram"></i>
                                 تلگرام
                             </button>
@@ -1506,6 +1653,13 @@
                     modal.style.display = 'none';
                 }
             });
+            
+            // بستن منوی موبایل وقتی روی جای دیگری کلیک می‌شود
+            const navLinks = document.getElementById('navLinks');
+            if (event.target !== document.querySelector('.menu-toggle') && 
+                !navLinks.contains(event.target)) {
+                navLinks.classList.remove('active');
+            }
         }
 
         document.addEventListener('DOMContentLoaded', function() {
