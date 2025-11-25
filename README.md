@@ -1,1 +1,1395 @@
-# monaco.boutik
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موناکو - بوتیک لباس لوکس</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #e74c3c;
+            --primary-dark: #c0392b;
+            --secondary: #2c3e50;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --danger: #dc3545;
+            --success: #28a745;
+            --gold: #ffd700;
+            --silver: #c0c0c0;
+            --whatsapp: #25D366;
+            --telegram: #0088cc;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+            color: var(--dark);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 50px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            padding: 1rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            color: var(--gold);
+            text-shadow: 0 0 10px rgba(255,215,0,0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-danger {
+            background: linear-gradient(45deg, var(--danger), #c82333);
+            color: white;
+        }
+
+        .btn-success {
+            background: linear-gradient(45deg, var(--success), #218838);
+            color: white;
+        }
+
+        .btn-gold {
+            background: linear-gradient(45deg, var(--gold), #ffed4e);
+            color: var(--dark);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(45deg, var(--whatsapp), #128C7E);
+            color: white;
+        }
+
+        .btn-telegram {
+            background: linear-gradient(45deg, var(--telegram), #006699);
+            color: white;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.9) 0%, rgba(231, 76, 60, 0.8) 100%), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.1"><polygon points="0,0 1000,50 1000,100 0,100"/></svg>');
+            background-size: cover;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 3rem 2rem;
+            background: var(--light);
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .products-section {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, var(--primary), var(--gold));
+            border-radius: 2px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid #f0f0f0;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, var(--primary), var(--gold));
+            z-index: 2;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--gold));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 3;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .product-price {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .empty-message {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            grid-column: 1/-1;
+        }
+
+        .empty-message i {
+            font-size: 5rem;
+            color: #ddd;
+            margin-bottom: 1.5rem;
+        }
+
+        .admin-panel {
+            background: white;
+            padding: 3rem 2rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: none;
+            border: 2px solid #f0f0f0;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .sync-section {
+            background: linear-gradient(135deg, #e8f5e8, #d4edda);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border-right: 5px solid var(--success);
+        }
+
+        .sync-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .user-import-section {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-right: 5px solid #2196f3;
+            text-align: center;
+        }
+
+        .help-section {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-right: 5px solid var(--gold);
+            text-align: center;
+        }
+
+        .product-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            backdrop-filter: blur(5px);
+        }
+
+        .product-modal-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 25px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 2px solid var(--gold);
+        }
+
+        .product-modal-image {
+            width: 100%;
+            height: 300px;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .product-modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-details {
+            margin-bottom: 2rem;
+        }
+
+        .product-detail-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        .detail-value {
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 2px solid var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+        }
+
+        .form-group textarea {
+            height: 60px;
+            resize: vertical;
+        }
+
+        .image-preview {
+            width: 100%;
+            height: 120px;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #f8f9fa;
+            transition: border-color 0.3s ease;
+        }
+
+        .image-preview:hover {
+            border-color: var(--primary);
+        }
+
+        .image-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1.5rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--secondary) 0%, #1a252f 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .product-actions {
+                flex-direction: column;
+            }
+            
+            .admin-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .sync-buttons {
+                flex-direction: column;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+        }
+
+        .buy-guide {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .buy-guide h3 {
+            color: #856404;
+            margin-bottom: 1rem;
+        }
+
+        .buy-guide p {
+            color: #856404;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .message-section {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            border: 2px solid var(--success);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-crown"></i>
+                    موناکو
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#"><i class="fas fa-home"></i> خانه</a></li>
+                    <li><a href="#"><i class="fas fa-tshirt"></i> محصولات</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> درباره ما</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i> تماس</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <button class="btn btn-primary" onclick="openRegister()">
+                        <i class="fas fa-user-plus"></i>
+                        ثبت‌نام
+                    </button>
+                    <button class="btn btn-secondary" onclick="openLogin()">
+                        <i class="fas fa-sign-in-alt"></i>
+                        ورود
+                    </button>
+                    <button class="btn btn-secondary" id="adminBtn" style="display: none;" onclick="toggleAdminPanel()">
+                        <i class="fas fa-cog"></i>
+                        پنل مدیریت
+                    </button>
+                    <button class="btn btn-primary" id="logoutBtn" style="display: none;" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        خروج
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>بوتیک لباس لوکس موناکو</h1>
+            <p>تجربه‌ای بی‌نظیر از خرید لباس‌های شیک و مدرن</p>
+            <button class="btn btn-gold" style="padding: 15px 40px; font-size: 1.2rem;" onclick="showBuyGuide()">
+                <i class="fas fa-shopping-bag"></i>
+                شروع خرید
+            </button>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <i class="fas fa-shipping-fast"></i>
+                <h3>ارسال رایگان</h3>
+                <p>ارسال رایگان برای خریدهای بالای 500 هزار تومان</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-headset"></i>
+                <h3>پشتیبانی 24/7</h3>
+                <p>پشتیبانی آنلاین در تمام ساعات روز</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-award"></i>
+                <h3>کیفیت عالی</h3>
+                <p>استفاده از بهترین مواد اولیه و دوخت</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-clock"></i>
+                <h3>تحویل سریع</h3>
+                <p>تحویل در کمترین زمان ممکن</p>
+            </div>
+        </section>
+
+        <section class="products-section">
+            <div class="section-header">
+                <h2>محصولات منتخب</h2>
+                <p>برترین و شیک‌ترین لباس‌های مجموعه موناکو</p>
+            </div>
+
+            <div class="message-section">
+                <h3><i class="fas fa-comment-dots"></i> برای خرید محصولات پیام بدهید</h3>
+                <p>برای خرید و دریافت اطلاعات بیشتر، از طریق واتس‌اپ یا تلگرام با ما در ارتباط باشید</p>
+                <div class="social-buttons">
+                    <button class="btn btn-whatsapp" onclick="sendWhatsAppMessage()">
+                        <i class="fab fa-whatsapp"></i>
+                        واتس‌اپ
+                    </button>
+                    <button class="btn btn-telegram" onclick="sendTelegramMessage()">
+                        <i class="fab fa-telegram"></i>
+                        تلگرام
+                    </button>
+                    <button class="btn btn-success" onclick="showBuyGuide()">
+                        <i class="fas fa-phone"></i>
+                        راهنمای خرید
+                    </button>
+                </div>
+            </div>
+
+            <div class="user-import-section">
+                <h3><i class="fas fa-file-import"></i> مشاهده محصولات</h3>
+                <p>برای مشاهده محصولات، فایلی که از مدیریت دریافت کرده‌اید را اینجا وارد کنید</p>
+                <button class="btn btn-primary" onclick="importProducts()">
+                    <i class="fas fa-upload"></i>
+                    وارد کردن فایل محصولات
+                </button>
+            </div>
+
+            <div class="loading" id="loadingProducts">
+                <div class="loading-spinner"></div>
+                <p>در حال بارگذاری محصولات...</p>
+            </div>
+            <div class="product-grid" id="productGrid"></div>
+        </section>
+
+        <div class="admin-panel" id="adminPanel">
+            <div class="admin-header">
+                <h2><i class="fas fa-crown"></i> پنل مدیریت محصولات</h2>
+                <div>
+                    <button class="btn btn-primary" onclick="openAddProduct()">
+                        <i class="fas fa-plus"></i>
+                        افزودن محصول جدید
+                    </button>
+                    <button class="btn btn-danger" onclick="deleteAllProducts()" style="margin-right: 1rem;">
+                        <i class="fas fa-trash"></i>
+                        حذف همه محصولات
+                    </button>
+                </div>
+            </div>
+
+            <div class="sync-section">
+                <h3><i class="fas fa-sync-alt"></i> مدیریت فایل محصولات</h3>
+                <p>فقط مدیر سیستم می‌تواند از محصولات خروجی بگیرد. این فایل را به کاربران بدهید</p>
+                <div class="sync-buttons">
+                    <button class="btn btn-success" onclick="exportProducts()">
+                        <i class="fas fa-download"></i>
+                        خروجی گرفتن از محصولات
+                    </button>
+                </div>
+            </div>
+
+            <div id="adminProductGrid"></div>
+        </div>
+
+        <div class="help-section">
+            <h3><i class="fas fa-question-circle"></i> نیاز به کمک دارید؟</h3>
+            <p>برای راهنمایی و خرید، با پشتیبانی ما تماس بگیرید</p>
+            <div class="social-buttons">
+                <button class="btn btn-whatsapp" onclick="sendWhatsAppMessage()">
+                    <i class="fab fa-whatsapp"></i>
+                    واتس‌اپ
+                </button>
+                <button class="btn btn-telegram" onclick="sendTelegramMessage()">
+                    <i class="fab fa-telegram"></i>
+                    تلگرام
+                </button>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="logo" style="justify-content: center; margin-bottom: 1rem;">
+                    <i class="fas fa-crown"></i>
+                    موناکو
+                </div>
+                <p>بوتیک تخصصی لباس‌های لوکس و شیک</p>
+                <div class="footer-links">
+                    <a href="#"><i class="fas fa-home"></i> خانه</a>
+                    <a href="#"><i class="fas fa-tshirt"></i> محصولات</a>
+                    <a href="#"><i class="fas fa-info-circle"></i> درباره ما</a>
+                    <a href="#"><i class="fas fa-phone"></i> تماس</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> راهنمای خرید</a>
+                </div>
+                <p>شماره تماس: ۰۹۱۲۹۵۷۳۰۹۶</p>
+                <p>© ۱۴۰۳ بوتیک موناکو - تمامی حقوق محفوظ است</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- مودال‌ها -->
+    <div class="product-modal" id="productModal">
+        <div class="product-modal-content">
+            <button onclick="closeProductModal()" style="position: absolute; top: 1rem; left: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--dark);">×</button>
+            <div class="product-modal-image" id="modalImage"></div>
+            <div class="product-details" id="modalDetails"></div>
+            <div class="message-section" style="margin: 1rem 0;">
+                <h4><i class="fas fa-shopping-cart"></i> برای خرید این محصول</h4>
+                <p>از طریق واتس‌اپ یا تلگرام پیام بدهید</p>
+                <div class="social-buttons">
+                    <button class="btn btn-whatsapp" onclick="sendWhatsAppMessage()">
+                        <i class="fab fa-whatsapp"></i>
+                        واتس‌اپ
+                    </button>
+                    <button class="btn btn-telegram" onclick="sendTelegramMessage()">
+                        <i class="fab fa-telegram"></i>
+                        تلگرام
+                    </button>
+                </div>
+            </div>
+            <button class="btn btn-primary" style="width: 100%;" onclick="closeProductModal()">
+                <i class="fas fa-times"></i>
+                بستن
+            </button>
+        </div>
+    </div>
+
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <h2><i class="fas fa-sign-in-alt"></i> ورود به سیستم</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>ایمیل:</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>رمز عبور:</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <i class="fas fa-sign-in-alt"></i>
+                    ورود
+                </button>
+            </form>
+            <button onclick="closeModals()" style="margin-top: 1rem; width: 100%;">
+                <i class="fas fa-times"></i>
+                بستن
+            </button>
+        </div>
+    </div>
+
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <h2><i class="fas fa-user-plus"></i> ثبت‌نام</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label>نام کامل:</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label>ایمیل:</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>رمز عبور:</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <i class="fas fa-user-plus"></i>
+                    ثبت‌نام
+                </button>
+            </form>
+            <button onclick="closeModals()" style="margin-top: 1rem; width: 100%;">
+                <i class="fas fa-times"></i>
+                بستن
+            </button>
+        </div>
+    </div>
+
+    <div class="modal" id="addProductModal">
+        <div class="modal-content">
+            <h2><i class="fas fa-plus"></i> افزودن محصول جدید</h2>
+
+            <form id="addProductForm">
+                <div class="form-group">
+                    <label>نام محصول:</label>
+                    <input type="text" id="productName" required>
+                </div>
+                <div class="form-group">
+                    <label>قیمت (تومان):</label>
+                    <input type="number" id="productPrice" required>
+                </div>
+                <div class="form-group">
+                    <label>عکس محصول:</label>
+                    <input type="file" id="productImage" accept="image/*" onchange="previewImage(this)" required>
+                    <div class="image-preview" id="imagePreview">
+                        <span>پیش‌نمایش عکس</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>رنگ:</label>
+                    <input type="text" id="productColor" placeholder="مشکی, سفید, آبی">
+                </div>
+                <div class="form-group">
+                    <label>سایز:</label>
+                    <input type="text" id="productSize" placeholder="S, M, L, XL">
+                </div>
+                <div class="form-group">
+                    <label>توضیحات:</label>
+                    <textarea id="productDescription" placeholder="توضیحات مختصر درباره محصول"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <i class="fas fa-plus"></i>
+                    افزودن محصول
+                </button>
+            </form>
+            <button onclick="closeModals()" style="margin-top: 1rem; width: 100%;">
+                <i class="fas fa-times"></i>
+                بستن
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // اطلاعات
+        let users = JSON.parse(localStorage.getItem('monaco_users')) || [];
+        let products = JSON.parse(localStorage.getItem('monaco_products')) || [];
+        let currentUser = JSON.parse(localStorage.getItem('current_user'));
+
+        // توابع جدید برای خرید
+        function sendWhatsAppMessage() {
+            const phoneNumber = "989129573096";
+            const message = "سلام! 👋\n\nمی‌خواهم از بوتیک موناکو خرید کنم.\nلطفاً راهنمایی ام کنید.";
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        function sendTelegramMessage() {
+            const phoneNumber = "989129573096";
+            const message = "سلام! 👋\n\nمی‌خواهم از بوتیک موناکو خرید کنم.\nلطفاً راهنمایی ام کنید.";
+            const url = `https://t.me/+${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        function showBuyGuide() {
+            alert("🛍️ راهنمای خرید از بوتیک موناکو:\n\n" +
+                  "1. محصول مورد نظر خود را انتخاب کنید\n" +
+                  "2. روی دکمه 'واتس‌اپ' یا 'تلگرام' کلیک کنید\n" +
+                  "3. پیام پیش‌فرض را ارسال کنید\n" +
+                  "4. کارشناسان ما با شما تماس خواهند گرفت\n\n" +
+                  "📞 شماره تماس: ۰۹۱۲۹۵۷۳۰۹۶\n" +
+                  "💬 واتس‌اپ: همین شماره\n" +
+                  "📱 تلگرام: همین شماره");
+        }
+
+        function showContactInfo() {
+            alert("📞 اطلاعات تماس بوتیک موناکو:\n\n" +
+                  "شماره تماس: ۰۹۱۲۹۵۷۳۰۹۶\n" +
+                  "واتس‌اپ: همین شماره\n" +
+                  "تلگرام: همین شماره\n\n" +
+                  "ساعات پاسخگویی:\n" +
+                  "📅 همه روزه\n" +
+                  "⏰ ۹ صبح تا ۹ شب");
+        }
+
+        // مدیر هنگام بسته شدن صفحه logout شود
+        window.addEventListener('beforeunload', function() {
+            if (currentUser && currentUser.isAdmin) {
+                localStorage.removeItem('current_user');
+            }
+        });
+
+        // توابع همگام‌سازی بین دستگاه‌ها
+        function exportProducts() {
+            if (!currentUser || !currentUser.isAdmin) {
+                alert("❌ فقط مدیر سیستم می‌تواند از محصولات خروجی بگیرد!");
+                return;
+            }
+            
+            if (products.length === 0) {
+                alert("❌ محصولی برای خروجی گرفتن وجود ندارد!");
+                return;
+            }
+            
+            try {
+                const dataStr = JSON.stringify(products, null, 2);
+                const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(dataBlob);
+                link.download = 'monaco_products.json';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                alert('✅ فایل محصولات با موفقیت دانلود شد!\n\nاین فایل را به کاربران بدهید تا محصولات را ببینند');
+            } catch (error) {
+                console.error('خطا در خروجی گرفتن:', error);
+                alert('❌ خطا در خروجی گرفتن از محصولات!');
+            }
+        }
+
+        function importProducts() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    try {
+                        const importedProducts = JSON.parse(e.target.result);
+                        products = importedProducts;
+                        localStorage.setItem('monaco_products', JSON.stringify(products));
+                        displayProducts();
+                        alert('✅ محصولات با موفقیت وارد شدند!\n\nاکنون می‌توانید محصولات را مشاهده کنید');
+                    } catch (error) {
+                        alert('❌ فایل معتبر نیست! لطفاً فایلی که از مدیریت دریافت کرده‌اید را وارد کنید');
+                    }
+                };
+                
+                reader.readAsText(file);
+            };
+            
+            input.click();
+        }
+
+        // بقیه توابع...
+        function openLogin() {
+            document.getElementById('loginModal').style.display = 'flex';
+        }
+
+        function openRegister() {
+            document.getElementById('registerModal').style.display = 'flex';
+        }
+
+        function openAddProduct() {
+            document.getElementById('addProductModal').style.display = 'flex';
+        }
+
+        function closeModals() {
+            document.getElementById('loginModal').style.display = 'none';
+            document.getElementById('registerModal').style.display = 'none';
+            document.getElementById('addProductModal').style.display = 'none';
+        }
+
+        function toggleAdminPanel() {
+            const panel = document.getElementById('adminPanel');
+            panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // پیش‌نمایش عکس
+        function previewImage(input) {
+            const preview = document.getElementById('imagePreview');
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.innerHTML = `<img src="${e.target.result}" alt="پیش‌نمایش">`;
+                }
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                preview.innerHTML = '<span>پیش‌نمایش عکس</span>';
+            }
+        }
+
+        function showProductDetails(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const modalImage = document.getElementById('modalImage');
+            const modalDetails = document.getElementById('modalDetails');
+
+            modalImage.innerHTML = `<img src="${product.image}" alt="${product.name}">`;
+            
+            modalDetails.innerHTML = `
+                <h2 style="margin-bottom: 1rem; color: var(--secondary);">${product.name}</h2>
+                <div class="product-detail-item">
+                    <span class="detail-label">قیمت:</span>
+                    <span class="detail-value">${product.price.toLocaleString()} تومان</span>
+                </div>
+                ${product.color ? `
+                <div class="product-detail-item">
+                    <span class="detail-label">رنگ‌های موجود:</span>
+                    <span class="detail-value">${product.color}</span>
+                </div>
+                ` : ''}
+                ${product.size ? `
+                <div class="product-detail-item">
+                    <span class="detail-label">سایزهای موجود:</span>
+                    <span class="detail-value">${product.size}</span>
+                </div>
+                ` : ''}
+                ${product.description ? `
+                <div class="product-detail-item">
+                    <span class="detail-label">توضیحات:</span>
+                    <span class="detail-value">${product.description}</span>
+                </div>
+                ` : ''}
+            `;
+
+            document.getElementById('productModal').style.display = 'flex';
+        }
+
+        function closeProductModal() {
+            document.getElementById('productModal').style.display = 'none';
+        }
+
+        function deleteProduct(productId) {
+            if (confirm('آیا از حذف این محصول اطمینان دارید؟')) {
+                products = products.filter(product => product.id !== productId);
+                localStorage.setItem('monaco_products', JSON.stringify(products));
+                displayProducts();
+                alert("محصول با موفقیت حذف شد!");
+            }
+        }
+
+        function deleteAllProducts() {
+            if (confirm('آیا از حذف تمام محصولات اطمینان دارید؟ این عمل قابل بازگشت نیست!')) {
+                products = [];
+                localStorage.setItem('monaco_products', JSON.stringify(products));
+                displayProducts();
+                alert("تمام محصولات حذف شدند!");
+            }
+        }
+
+        function displayProducts() {
+            const productGrid = document.getElementById('productGrid');
+            const adminProductGrid = document.getElementById('adminProductGrid');
+            
+            if (products.length === 0) {
+                productGrid.innerHTML = `
+                    <div class="empty-message" style="grid-column: 1/-1;">
+                        <i class="fas fa-tshirt" style="font-size: 5rem; color: #ddd; margin-bottom: 1.5rem;"></i>
+                        <h3>لطفا فایل محصولات را وارد کنید</h3>
+                        <p>برای مشاهده محصولات، فایلی که از مدیریت دریافت کرده‌اید را در بخش "مشاهده محصولات" وارد کنید</p>
+                        <button class="btn btn-primary" onclick="importProducts()" style="margin-top: 1rem;">
+                            <i class="fas fa-upload"></i>
+                            وارد کردن فایل محصولات
+                        </button>
+                    </div>
+                `;
+                
+                adminProductGrid.innerHTML = `
+                    <div class="empty-message">
+                        <i class="fas fa-box-open" style="font-size: 5rem; color: #ddd; margin-bottom: 1.5rem;"></i>
+                        <h3>هنوز محصولی برای مدیریت وجود ندارد</h3>
+                        <p>برای شروع، اولین محصول خود را اضافه کنید</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // نمایش برای کاربران عادی
+            productGrid.innerHTML = '';
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.onclick = () => showProductDetails(product.id);
+                productCard.innerHTML = `
+                    <div class="product-badge">جدید</div>
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">${product.name}</div>
+                        <div class="product-price">${product.price.toLocaleString()} تومان</div>
+                        <div class="product-actions">
+                            <button class="btn btn-whatsapp" style="flex: 1;" onclick="event.stopPropagation(); sendWhatsAppMessage()">
+                                <i class="fab fa-whatsapp"></i>
+                                واتس‌اپ
+                            </button>
+                            <button class="btn btn-telegram" style="flex: 1;" onclick="event.stopPropagation(); sendTelegramMessage()">
+                                <i class="fab fa-telegram"></i>
+                                تلگرام
+                            </button>
+                        </div>
+                    </div>
+                `;
+                productGrid.appendChild(productCard);
+            });
+            
+            // نمایش برای ادمین
+            adminProductGrid.innerHTML = '<h3>محصولات شما:</h3>';
+            const adminGrid = document.createElement('div');
+            adminGrid.className = 'product-grid';
+            adminProductGrid.appendChild(adminGrid);
+            
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">${product.name}</div>
+                        <div class="product-price">${product.price.toLocaleString()} تومان</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary" style="flex: 1;" onclick="showProductDetails(${product.id})">
+                                <i class="fas fa-eye"></i> مشاهده
+                            </button>
+                            <button class="btn btn-danger" style="flex: 1;" onclick="deleteProduct(${product.id})">
+                                <i class="fas fa-trash"></i> حذف
+                            </button>
+                        </div>
+                    </div>
+                `;
+                adminGrid.appendChild(productCard);
+            });
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            if (email === "amir20229999@gmail.com" && password === "amir2022") {
+                currentUser = { name: 'امیر', email: email, isAdmin: true };
+                localStorage.setItem('current_user', JSON.stringify(currentUser));
+                updateUI();
+                displayProducts();
+                alert("خوش آمدید امیر!");
+                closeModals();
+            } else {
+                const user = users.find(u => u.email === email && u.password === password);
+                if (user) {
+                    currentUser = user;
+                    localStorage.setItem('current_user', JSON.stringify(currentUser));
+                    updateUI();
+                    displayProducts();
+                    alert(`خوش آمدید ${user.name}!`);
+                    closeModals();
+                } else {
+                    alert("ایمیل یا رمز عبور اشتباه است!");
+                }
+            }
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('registerName').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            
+            if (users.find(u => u.email === email)) {
+                alert("این ایمیل قبلاً ثبت‌نام شده است!");
+                return;
+            }
+            
+            const newUser = { name, email, password };
+            users.push(newUser);
+            localStorage.setItem('monaco_users', JSON.stringify(users));
+            
+            currentUser = newUser;
+            localStorage.setItem('current_user', JSON.stringify(currentUser));
+            updateUI();
+            
+            alert(`ثبت‌نام موفقیت آمیز!\nخوش آمدید ${name}`);
+            closeModals();
+        });
+
+        document.getElementById('addProductForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('productName').value;
+            const price = parseInt(document.getElementById('productPrice').value);
+            const imageInput = document.getElementById('productImage');
+            const color = document.getElementById('productColor').value;
+            const size = document.getElementById('productSize').value;
+            const description = document.getElementById('productDescription').value;
+            
+            if (imageInput.files && imageInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imageData = e.target.result;
+                    
+                    const newProduct = {
+                        id: Date.now(),
+                        name: name,
+                        price: price,
+                        image: imageData,
+                        color: color,
+                        size: size,
+                        description: description
+                    };
+                    
+                    products.push(newProduct);
+                    localStorage.setItem('monaco_products', JSON.stringify(products));
+                    displayProducts();
+                    alert("✅ محصول با موفقیت اضافه شد!");
+                    closeModals();
+                    document.getElementById('addProductForm').reset();
+                    document.getElementById('imagePreview').innerHTML = '<span>پیش‌نمایش عکس</span>';
+                };
+                reader.readAsDataURL(imageInput.files[0]);
+            } else {
+                alert("لطفاً عکس محصول را انتخاب کنید!");
+            }
+        });
+
+        function logout() {
+            currentUser = null;
+            localStorage.removeItem('current_user');
+            updateUI();
+            displayProducts();
+            alert("با موفقیت خارج شدید!");
+        }
+
+        function updateUI() {
+            const loginBtn = document.querySelector('.btn-primary[onclick="openRegister()"]');
+            const registerBtn = document.querySelector('.btn-secondary[onclick="openLogin()"]');
+            const adminBtn = document.getElementById('adminBtn');
+            const logoutBtn = document.getElementById('logoutBtn');
+            const adminPanel = document.getElementById('adminPanel');
+
+            if (currentUser) {
+                loginBtn.style.display = 'none';
+                registerBtn.style.display = 'none';
+                logoutBtn.style.display = 'block';
+                
+                if (currentUser.isAdmin) {
+                    adminBtn.style.display = 'block';
+                    adminPanel.style.display = 'block';
+                } else {
+                    adminBtn.style.display = 'none';
+                    adminPanel.style.display = 'none';
+                }
+            } else {
+                loginBtn.style.display = 'block';
+                registerBtn.style.display = 'block';
+                adminBtn.style.display = 'none';
+                logoutBtn.style.display = 'none';
+                adminPanel.style.display = 'none';
+            }
+        }
+
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal, .product-modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateUI();
+            displayProducts();
+        });
+    </script>
+</body>
+</html>
