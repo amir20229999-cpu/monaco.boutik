@@ -2,45 +2,11 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موناکو | بوتیک لباس لوکس</title>
-    <meta name="description" content="بوتیک موناکو - ارائه کننده لباس‌های لوکس و شیک با بهترین کیفیت و قیمت">
-    <meta name="keywords" content="لباس لوکس, فروشگاه پوشاک, مد روز, پیراهن مردانه, پیراهن زنانه">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>موناکو - بوتیک لباس لوکس</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Reset و تنظیمات پیشرفته */
-        :root {
-            --primary: #e74c3c;
-            --primary-dark: #c0392b;
-            --primary-light: #ff7675;
-            --secondary: #2c3e50;
-            --secondary-light: #34495e;
-            --accent: #f39c12;
-            --accent-light: #f1c40f;
-            --light: #f8f9fa;
-            --dark: #2d3436;
-            --gray: #636e72;
-            --gray-light: #dfe6e9;
-            --success: #00b894;
-            --danger: #d63031;
-            --warning: #fdcb6e;
-            --info: #0984e3;
-            --gold: #ffd700;
-            --silver: #bdc3c7;
-            --whatsapp: #25D366;
-            --telegram: #0088cc;
-            --border-radius-sm: 8px;
-            --border-radius: 16px;
-            --border-radius-lg: 24px;
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
-            --shadow: 0 8px 30px rgba(0,0,0,0.12);
-            --shadow-lg: 0 20px 60px rgba(0,0,0,0.16);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-            --gradient-primary: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-            --gradient-gold: linear-gradient(135deg, #ffd700 0%, #f39c12 100%);
-            --gradient-dark: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
-        }
-
+        /* Reset و تنظیمات پایه */
         * {
             margin: 0;
             padding: 0;
@@ -48,603 +14,510 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --primary: #e74c3c;
+            --primary-dark: #c0392b;
+            --secondary: #2c3e50;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --danger: #dc3545;
+            --success: #28a745;
+            --gold: #ffd700;
+            --silver: #c0c0c0;
+            --whatsapp: #25D366;
+            --telegram: #0088cc;
+            --border-radius: 12px;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Vazirmatn', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
             color: var(--dark);
-            line-height: 1.7;
-            overflow-x: hidden;
             min-height: 100vh;
+            line-height: 1.5;
+            overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 1rem;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* سیستم موسیقی */
+        /* پخش کننده موسیقی */
         .music-player {
             position: fixed;
-            bottom: 30px;
-            left: 30px;
-            z-index: 10000;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
-            border-radius: 50px;
-            padding: 12px 20px;
-            box-shadow: var(--shadow-lg);
+            bottom: 20px;
+            left: 20px;
+            z-index: 9998;
             display: flex;
             align-items: center;
-            gap: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px 15px;
+            border-radius: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
         }
 
         .music-btn {
-            width: 56px;
-            height: 56px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            background: var(--gradient-primary);
+            background: linear-gradient(45deg, var(--primary), var(--primary-dark));
             border: none;
             color: white;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
         }
 
         .music-btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
         }
 
         .music-btn.playing {
-            background: var(--gradient-gold);
+            background: linear-gradient(45deg, var(--success), #28a745);
         }
 
         .volume-control {
             display: flex;
             align-items: center;
-            gap: 10px;
-            width: 180px;
+            gap: 8px;
+            opacity: 0;
+            width: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .volume-control.show {
+            opacity: 1;
+            width: 120px;
         }
 
         .volume-slider {
-            flex: 1;
-            height: 6px;
+            width: 100px;
+            height: 5px;
             -webkit-appearance: none;
-            background: linear-gradient(90deg, var(--primary) 0%, #ddd 0%);
-            border-radius: 3px;
+            background: #ddd;
+            border-radius: 5px;
             outline: none;
         }
 
         .volume-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
-            background: white;
-            border: 3px solid var(--primary);
+            background: var(--primary);
             cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
-        .now-playing {
-            font-size: 0.9rem;
-            color: var(--gray);
-            font-weight: 500;
-            white-space: nowrap;
+        .volume-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            border: none;
         }
 
-        /* هدر */
+        /* Container اصلی */
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+
+        /* هدر - کاملاً ریسپانسیو */
         header {
-            background: linear-gradient(135deg, rgba(44, 62, 80, 0.95) 0%, rgba(231, 76, 60, 0.9) 100%);
-            padding: 1rem 0;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            padding: 0.8rem 1rem;
             position: sticky;
             top: 0;
-            z-index: 9999;
-            box-shadow: var(--shadow);
-            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 100%;
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            gap: 0.5rem;
+            flex-wrap: nowrap;
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: var(--secondary);
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-text h1 {
-            font-size: 1.8rem;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            font-weight: bold;
             color: white;
-            margin: 0;
-            letter-spacing: 1px;
-        }
-
-        .logo-text span {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 300;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        .nav-item {
-            position: relative;
-        }
-
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.05rem;
-            padding: 0.5rem 0;
-            transition: var(--transition);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 0.4rem;
+            flex-shrink: 0;
         }
 
-        .nav-link:hover {
-            color: var(--accent-light);
+        .logo i {
+            color: var(--gold);
+            font-size: 1.2em;
+        }
+
+        .nav-links {
+            display: none; /* مخفی در موبایل */
         }
 
         .auth-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 0.5rem;
+            flex-wrap: nowrap;
         }
 
-        /* دکمه‌ها */
+        /* دکمه‌ها - بهینه برای تمام دستگاه‌ها */
         .btn {
-            padding: 12px 28px;
+            padding: 0.6rem 1rem;
             border: none;
-            border-radius: 50px;
+            border-radius: 25px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 1rem;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
+            gap: 0.4rem;
+            transition: all 0.2s ease;
+            font-size: clamp(0.8rem, 3vw, 0.9rem);
+            min-height: 40px;
+            min-width: max-content;
+            flex-shrink: 0;
+            text-align: center;
         }
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .btn-primary {
-            background: var(--gradient-primary);
+            background: linear-gradient(45deg, var(--primary), var(--primary-dark));
             color: white;
-            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(231, 76, 60, 0.4);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255,255,255,0.15);
             color: white;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
         }
 
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-3px);
+        .btn-danger {
+            background: linear-gradient(45deg, var(--danger), #c82333);
+            color: white;
+        }
+
+        .btn-success {
+            background: linear-gradient(45deg, var(--success), #218838);
+            color: white;
         }
 
         .btn-gold {
-            background: var(--gradient-gold);
+            background: linear-gradient(45deg, var(--gold), #ffed4e);
             color: var(--dark);
-            font-weight: 700;
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4);
         }
 
         .btn-whatsapp {
-            background: linear-gradient(135deg, var(--whatsapp), #128C7E);
+            background: linear-gradient(45deg, var(--whatsapp), #128C7E);
             color: white;
         }
 
         .btn-telegram {
-            background: linear-gradient(135deg, var(--telegram), #006699);
+            background: linear-gradient(45deg, var(--telegram), #006699);
             color: white;
+        }
+
+        .btn-small {
+            padding: 0.3rem 0.8rem;
+            font-size: 0.8rem;
+            min-height: 32px;
         }
 
         /* Hero Section */
         .hero {
-            position: relative;
-            padding: 120px 0;
-            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(231, 76, 60, 0.75)), 
-                        url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(231, 76, 60, 0.8)), 
+                        url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
+            padding: clamp(2rem, 8vw, 4rem) 1rem;
+            margin-bottom: 1rem;
         }
 
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             opacity: 0.9;
-            line-height: 1.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* Features */
+        /* Features Grid */
         .features {
-            padding: 100px 0;
-            background: white;
-        }
-
-        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--light);
         }
 
         .feature-card {
             background: white;
-            padding: 40px 30px;
+            padding: 1.5rem;
             border-radius: var(--border-radius);
             text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
 
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient-primary);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
+        .feature-card i {
             font-size: 2.5rem;
             color: var(--primary);
-            transition: var(--transition);
-        }
-
-        .feature-card:hover .feature-icon {
-            background: var(--gradient-primary);
-            color: white;
-            transform: rotateY(360deg);
-        }
-
-        .feature-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--secondary);
-        }
-
-        .feature-card p {
-            color: var(--gray);
-            line-height: 1.7;
+            margin-bottom: 1rem;
         }
 
         /* Products Section */
         .products-section {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            background: white;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 2rem;
         }
 
         .section-header h2 {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 20px;
             position: relative;
             display: inline-block;
+            margin-bottom: 0.5rem;
         }
 
         .section-header h2::after {
             content: '';
             position: absolute;
-            bottom: -15px;
+            bottom: -8px;
             right: 50%;
             transform: translateX(50%);
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-primary);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, var(--primary), var(--gold));
             border-radius: 2px;
         }
 
-        .section-header p {
-            font-size: 1.2rem;
-            color: var(--gray);
-            max-width: 600px;
-            margin: 30px auto 0;
-            line-height: 1.8;
-        }
-
-        /* Product Grid */
+        /* Product Grid - کاملاً ریسپانسیو */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .product-card {
             background: white;
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
         }
 
         .product-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
         }
 
         .product-image-container {
-            position: relative;
             width: 100%;
-            height: 300px;
+            height: 250px;
+            position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
         }
 
         .product-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: transform 0.5s ease;
         }
 
         .product-card:hover .product-image {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
-        .product-badge {
+        /* Badge تخفیف */
+        .discount-badge {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            background: var(--gradient-primary);
+            top: 10px;
+            left: 10px;
+            background: linear-gradient(45deg, var(--success), #28a745);
             color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 1px;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
             z-index: 2;
-            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+            animation: pulse 2s infinite;
         }
 
-        .product-badge.sale {
-            background: var(--gradient-gold);
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
-        .product-badge.new {
-            background: linear-gradient(135deg, var(--success), #00a085);
-        }
-
+        /* Product Info */
         .product-info {
-            padding: 30px;
+            padding: 1.2rem;
         }
 
         .product-title {
-            font-size: 1.4rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
             color: var(--secondary);
-            margin-bottom: 15px;
-            line-height: 1.4;
-        }
-
-        .product-description {
-            color: var(--gray);
-            margin-bottom: 20px;
-            line-height: 1.6;
+            line-height: 1.3;
         }
 
         .price-container {
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
             flex-wrap: wrap;
         }
 
-        .current-price {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
         .original-price {
-            font-size: 1.2rem;
-            color: var(--gray);
+            color: #999;
             text-decoration: line-through;
-        }
-
-        .discount-percentage {
-            background: var(--success);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
             font-size: 0.9rem;
-            font-weight: 600;
         }
 
-        .product-colors {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 25px;
+        .discount-price {
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.3rem;
         }
 
-        .color-option {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            border: 2px solid white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: var(--transition);
+        .regular-price {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.3rem;
         }
 
-        .color-option:hover {
-            transform: scale(1.1);
+        .discount-reason {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
         }
 
         .product-actions {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
         }
 
-        /* Message Section */
-        .message-section {
-            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
-            padding: 60px;
+        .product-actions .btn {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* رنگ‌های محصول */
+        .product-colors {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .color-circle {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+
+        /* Sections دیگر */
+        .message-section,
+        .help-section {
+            padding: 1.5rem;
             border-radius: var(--border-radius);
-            margin: 60px 0;
+            margin: 1.5rem 0;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
-        .message-section h3 {
-            font-size: 2.2rem;
-            color: #2d3436;
-            margin-bottom: 20px;
+        .message-section {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            border-right: 4px solid var(--success);
         }
 
-        .message-section p {
-            font-size: 1.1rem;
-            color: #636e72;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            line-height: 1.8;
+        .help-section {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border-right: 4px solid var(--gold);
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
         }
 
         /* Admin Panel */
         .admin-panel {
             background: white;
-            padding: 50px;
-            border-radius: var(--border-radius-lg);
-            margin: 60px 0;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid rgba(0,0,0,0.05);
+            padding: 1.5rem;
+            margin: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             display: none;
+            border: 2px solid #f0f0f0;
         }
 
         .admin-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 40px;
-            padding-bottom: 25px;
-            border-bottom: 2px solid var(--gray-light);
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f0f0f0;
         }
 
-        .admin-header h2 {
-            font-size: 2.5rem;
-            color: var(--secondary);
+        .sync-section {
+            background: #f8fff8;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+            border-right: 4px solid var(--success);
+        }
+
+        .sync-buttons {
             display: flex;
-            align-items: center;
-            gap: 15px;
+            gap: 0.8rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
         }
 
-        /* مودال‌ها */
+        /* مودال‌ها - کاملاً ریسپانسیو */
         .modal {
             display: none;
             position: fixed;
@@ -652,239 +525,342 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 10001;
+            background: rgba(0,0,0,0.7);
+            z-index: 9999;
             overflow-y: auto;
-            padding: 20px;
-            backdrop-filter: blur(10px);
+            padding: 20px 10px;
+            backdrop-filter: blur(3px);
         }
 
         .modal-content {
             background: white;
-            border-radius: var(--border-radius-lg);
-            width: 100%;
-            max-width: 600px;
-            margin: 50px auto;
+            border-radius: var(--border-radius);
+            width: 95%;
+            max-width: 500px;
+            margin: 20px auto;
             position: relative;
-            box-shadow: var(--shadow-lg);
+            max-height: 90vh;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
 
         .modal-header {
-            padding: 30px 40px 20px;
-            border-bottom: 1px solid var(--gray-light);
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid #eee;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: var(--light);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
 
-        .modal-header h2 {
-            font-size: 2rem;
-            color: var(--secondary);
-            margin: 0;
+        .modal-body {
+            padding: 1.5rem;
+            max-height: 70vh;
+            overflow-y: auto;
         }
 
         .close-btn {
             background: none;
             border: none;
-            font-size: 2rem;
-            color: var(--gray);
+            font-size: 1.5rem;
             cursor: pointer;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+            color: var(--dark);
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: var(--transition);
+            border-radius: 50%;
+            transition: background 0.2s;
         }
 
         .close-btn:hover {
-            background: var(--gray-light);
-            color: var(--dark);
-        }
-
-        .modal-body {
-            padding: 30px 40px;
-            max-height: 70vh;
-            overflow-y: auto;
+            background: #f0f0f0;
         }
 
         /* فرم‌ها */
-        .form-group {
-            margin-bottom: 25px;
+        .modal-form {
+            width: 100%;
         }
 
-        .form-label {
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 0.5rem;
             font-weight: 600;
             color: var(--secondary);
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
-        .form-control {
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
             width: 100%;
-            padding: 15px 20px;
-            border: 2px solid var(--gray-light);
-            border-radius: var(--border-radius-sm);
+            padding: 0.8rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
             font-size: 1rem;
-            font-family: inherit;
-            transition: var(--transition);
+            transition: border-color 0.3s;
             background: white;
         }
 
-        .form-control:focus {
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             border-color: var(--primary);
             box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
         }
 
-        .file-upload {
-            border: 2px dashed var(--gray-light);
-            border-radius: var(--border-radius);
-            padding: 40px;
+        /* آپلود عکس */
+        .image-upload-container {
+            margin-bottom: 1.5rem;
+        }
+
+        .upload-area {
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 2rem;
             text-align: center;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s;
+            background: #fafafa;
         }
 
-        .file-upload:hover {
+        .upload-area:hover {
             border-color: var(--primary);
-            background: rgba(231, 76, 60, 0.02);
+            background: #f8f9fa;
         }
 
-        .file-upload i {
+        .upload-area.dragover {
+            border-color: var(--success);
+            background: #e8f5e9;
+        }
+
+        .upload-area i {
             font-size: 3rem;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .uploaded-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .uploaded-image {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #eee;
+        }
+
+        .uploaded-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .remove-image {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background: rgba(220, 53, 69, 0.9);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        /* انتخاب رنگ */
+        .color-picker-container {
+            margin-bottom: 1.5rem;
+        }
+
+        .color-input-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .color-input {
+            flex: 1;
+        }
+
+        .selected-colors {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .color-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #f8f9fa;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .color-preview {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .remove-color {
+            background: none;
+            border: none;
+            color: var(--danger);
+            cursor: pointer;
+            font-size: 0.8rem;
+            padding: 0 0.3rem;
+        }
+
+        /* Product Modal خاص */
+        .product-modal .modal-content {
+            max-width: 600px;
+        }
+
+        .image-slider {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+        }
+
+        .slider-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .slider-image.active {
+            display: block;
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 15px;
+            right: 50%;
+            transform: translateX(50%);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .slider-dot.active {
+            background: white;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.3);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+
+        .slider-arrow:hover {
+            background: rgba(0,0,0,0.5);
+        }
+
+        .prev-arrow {
+            right: 15px;
+        }
+
+        .next-arrow {
+            left: 15px;
+        }
+
+        /* Empty State */
+        .empty-message {
+            text-align: center;
+            padding: 3rem 1rem;
+            grid-column: 1 / -1;
+        }
+
+        .empty-message i {
+            font-size: 4rem;
+            color: #ddd;
+            margin-bottom: 1rem;
         }
 
         /* Footer */
         footer {
-            background: var(--gradient-dark);
+            background: linear-gradient(135deg, var(--secondary) 0%, #1a252f 100%);
             color: white;
-            padding: 80px 0 30px;
-            position: relative;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
         }
 
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .footer-section h3 {
-            font-size: 1.4rem;
-            margin-bottom: 25px;
-            color: white;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .footer-section h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--accent-light);
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
         }
 
         .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-light);
-            padding-right: 10px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-link {
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: white;
             text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s;
             font-size: 0.9rem;
         }
 
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-            
-            .section-header h2 {
-                font-size: 2.5rem;
-            }
+        .footer-links a:hover {
+            color: var(--gold);
         }
 
-        @media (max-width: 992px) {
-            .nav-menu {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: 80px 0;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .features-grid {
+        /* Media Queries برای دستگاه‌های مختلف */
+        @media (max-width: 480px) {
+            .features {
                 grid-template-columns: 1fr;
             }
             
@@ -892,68 +868,121 @@
                 grid-template-columns: 1fr;
             }
             
-            .music-player {
-                bottom: 20px;
-                left: 20px;
-                right: 20px;
-                flex-direction: column;
-                align-items: stretch;
-                padding: 15px;
-            }
-            
-            .volume-control {
-                width: 100%;
-            }
-            
-            .modal-content {
-                margin: 20px auto;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .navbar {
-                padding: 0 1rem;
-            }
-            
-            .logo-text h1 {
-                font-size: 1.5rem;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
+            .auth-buttons {
+                gap: 0.3rem;
             }
             
             .btn {
-                padding: 10px 20px;
-                font-size: 0.9rem;
+                padding: 0.5rem 0.8rem;
+                font-size: 0.8rem;
             }
             
-            .section-header h2 {
-                font-size: 2rem;
+            .product-actions {
+                flex-direction: column;
+            }
+            
+            .sync-buttons {
+                flex-direction: column;
+            }
+            
+            .social-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .social-buttons .btn {
+                width: 100%;
+            }
+            
+            .music-player {
+                bottom: 10px;
+                left: 10px;
+                padding: 8px 12px;
+            }
+            
+            .music-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
             }
         }
 
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+                gap: 1.5rem;
+                list-style: none;
+            }
+            
+            .nav-links a {
+                color: white;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                transition: background 0.3s;
+            }
+            
+            .nav-links a:hover {
+                background: rgba(255,255,255,0.1);
+            }
+            
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero {
+                padding: 4rem 2rem;
+            }
+            
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
         }
 
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
+        @media (min-width: 1024px) {
+            .features {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .navbar {
+                padding: 0 2rem;
+            }
+            
+            .products-section {
+                padding: 2rem;
+            }
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, var(--primary), var(--primary-dark));
-            border-radius: 5px;
+        /* Loading Spinner */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            display: none;
         }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, var(--primary-dark), var(--secondary));
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <!-- Music Player -->
+    <!-- کنترل موسیقی -->
     <div class="music-player">
         <button class="music-btn" id="musicToggle">
             <i class="fas fa-music"></i>
@@ -962,124 +991,88 @@
             <i class="fas fa-volume-up"></i>
             <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.1" value="0.3">
         </div>
-        <div class="now-playing" id="nowPlaying">
-            موسیقی آرامش‌بخش
-        </div>
     </div>
 
-    <!-- Header -->
-    <header>
-        <nav class="navbar container">
-            <a href="#" class="logo">
-                <div class="logo-icon">
+    <div class="container">
+        <!-- هدر -->
+        <header>
+            <nav class="navbar">
+                <div class="logo">
                     <i class="fas fa-crown"></i>
+                    موناکو
                 </div>
-                <div class="logo-text">
-                    <h1>موناکو</h1>
-                    <span>بوتیک لباس لوکس</span>
-                </div>
-            </a>
-            
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-home"></i> خانه</a></li>
-                <li class="nav-item"><a href="#products" class="nav-link"><i class="fas fa-tshirt"></i> محصولات</a></li>
-                <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-info-circle"></i> درباره ما</a></li>
-                <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-phone"></i> تماس</a></li>
-            </ul>
-            
-            <div class="auth-buttons">
-                <button class="btn btn-secondary" onclick="openLogin()">
-                    <i class="fas fa-sign-in-alt"></i>
-                    ورود
-                </button>
-                <button class="btn btn-primary" onclick="openRegister()">
-                    <i class="fas fa-user-plus"></i>
-                    ثبت‌نام
-                </button>
-                <button class="btn btn-secondary" id="adminBtn" style="display: none;" onclick="toggleAdminPanel()">
-                    <i class="fas fa-cog"></i>
-                    پنل مدیریت
-                </button>
-                <button class="btn btn-primary" id="logoutBtn" style="display: none;" onclick="logout()">
-                    <i class="fas fa-sign-out-alt"></i>
-                    خروج
-                </button>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>تجربه‌ای لوکس از دنیای مد</h1>
-                <p>در بوتیک موناکو، زیبایی و کیفیت در هم می‌آمیزد. با انتخاب‌های بی‌نظیر ما، استایلی منحصر به فرد برای خود خلق کنید.</p>
-                <div class="hero-cta">
-                    <button class="btn btn-gold" onclick="showBuyGuide()">
-                        <i class="fas fa-shopping-bag"></i>
-                        شروع خرید اکنون
+                <ul class="nav-links">
+                    <li><a href="#"><i class="fas fa-home"></i> خانه</a></li>
+                    <li><a href="#"><i class="fas fa-tshirt"></i> محصولات</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> درباره ما</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i> تماس</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <button class="btn btn-primary" onclick="openRegister()">
+                        <i class="fas fa-user-plus"></i>
+                        ثبت‌نام
+                    </button>
+                    <button class="btn btn-secondary" onclick="openLogin()">
+                        <i class="fas fa-sign-in-alt"></i>
+                        ورود
+                    </button>
+                    <button class="btn btn-secondary" id="adminBtn" style="display: none;" onclick="toggleAdminPanel()">
+                        <i class="fas fa-cog"></i>
+                        پنل مدیریت
+                    </button>
+                    <button class="btn btn-primary" id="logoutBtn" style="display: none;" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        خروج
                     </button>
                 </div>
-            </div>
-        </div>
-    </section>
+            </nav>
+        </header>
 
-    <!-- Features -->
-    <section class="features">
-        <div class="container">
-            <div class="section-header">
-                <h2>چرا موناکو را انتخاب کنید؟</h2>
-                <p>ما تعهد داریم بهترین تجربه خرید را برای شما فراهم کنیم</p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3>کیفیت درجه یک</h3>
-                    <p>استفاده از بهترین پارچه‌ها و دوخت حرفه‌ای برای محصولاتی با ماندگاری بالا</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shipping-fast"></i>
-                    </div>
-                    <h3>تحویل سریع</h3>
-                    <p>ارسال رایگان برای خریدهای بالای 500 هزار تومان و تحویل در کمترین زمان</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>پشتیبانی ۲۴/۷</h3>
-                    <p>تیم پشتیبانی ما همیشه آماده پاسخگویی به سوالات و راهنمایی شماست</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>ضمانت بازگشت</h3>
-                    <p>در صورت عدم رضایت، تا ۷ روز امکان بازگشت کالا با شرایط خاص وجود دارد</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>بوتیک لباس لوکس موناکو</h1>
+            <p>تجربه‌ای بی‌نظیر از خرید لباس‌های شیک و مدرن با بهترین کیفیت و قیمت</p>
+            <button class="btn btn-gold" onclick="showBuyGuide()">
+                <i class="fas fa-shopping-bag"></i>
+                شروع خرید
+            </button>
+        </section>
 
-    <!-- Products Section -->
-    <section class="products-section" id="products">
-        <div class="container">
+        <!-- Features -->
+        <section class="features">
+            <div class="feature-card">
+                <i class="fas fa-shipping-fast"></i>
+                <h3>ارسال رایگان</h3>
+                <p>ارسال رایگان برای خریدهای بالای 500 هزار تومان</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-headset"></i>
+                <h3>پشتیبانی 24/7</h3>
+                <p>پشتیبانی آنلاین در تمام ساعات روز</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-award"></i>
+                <h3>کیفیت عالی</h3>
+                <p>استفاده از بهترین مواد اولیه و دوخت</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-clock"></i>
+                <h3>تحویل سریع</h3>
+                <p>تحویل در کمترین زمان ممکن</p>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products-section">
             <div class="section-header">
                 <h2>محصولات منتخب</h2>
-                <p>برترین و شیک‌ترین لباس‌های مجموعه موناکو که توسط متخصصان مد انتخاب شده‌اند</p>
+                <p>برترین و شیک‌ترین لباس‌های مجموعه موناکو</p>
             </div>
 
             <!-- راهنمای خرید -->
             <div class="message-section">
-                <h3><i class="fas fa-comment-dots"></i> برای خرید محصولات با ما در ارتباط باشید</h3>
-                <p>کارشناسان فروش ما آماده راهنمایی و پاسخگویی به سوالات شما هستند. برای دریافت مشاوره رایگان و ثبت سفارش، از طریق واتس‌اپ یا تلگرام با ما در ارتباط باشید.</p>
+                <h3><i class="fas fa-comment-dots"></i> برای خرید محصولات پیام بدهید</h3>
+                <p>برای خرید و دریافت اطلاعات بیشتر، از طریق واتس‌اپ یا تلگرام با ما در ارتباط باشید</p>
                 <div class="social-buttons">
                     <button class="btn btn-whatsapp" onclick="sendWhatsAppMessage()">
                         <i class="fab fa-whatsapp"></i>
@@ -1089,194 +1082,239 @@
                         <i class="fab fa-telegram"></i>
                         تلگرام
                     </button>
-                    <button class="btn btn-gold" onclick="showContactInfo()">
+                    <button class="btn btn-success" onclick="showBuyGuide()">
                         <i class="fas fa-phone"></i>
-                        اطلاعات تماس
+                        راهنمای خرید
                     </button>
                 </div>
             </div>
 
+            <!-- Loading -->
+            <div class="loading" id="loadingProducts">
+                <div class="loading-spinner"></div>
+                <p>در حال بارگذاری محصولات...</p>
+            </div>
+
             <!-- Grid محصولات -->
-            <div class="product-grid" id="productGrid">
-                <!-- محصولات اینجا نمایش داده می‌شوند -->
+            <div class="product-grid" id="productGrid"></div>
+        </section>
+
+        <!-- پنل مدیریت -->
+        <div class="admin-panel" id="adminPanel">
+            <div class="admin-header">
+                <h2><i class="fas fa-crown"></i> پنل مدیریت محصولات</h2>
+                <div>
+                    <button class="btn btn-primary" onclick="openAddProduct()">
+                        <i class="fas fa-plus"></i>
+                        افزودن محصول جدید
+                    </button>
+                    <button class="btn btn-danger" onclick="deleteAllProducts()" style="margin-right: 1rem;">
+                        <i class="fas fa-trash"></i>
+                        حذف همه محصولات
+                    </button>
+                </div>
+            </div>
+
+            <!-- بخش خروجی گرفتن -->
+            <div class="sync-section">
+                <h3><i class="fas fa-sync-alt"></i> مدیریت فایل محصولات</h3>
+                <p>برای خروجی گرفتن از محصولات از دکمه زیر استفاده کنید</p>
+                <div class="sync-buttons">
+                    <button class="btn btn-success" onclick="exportProducts()">
+                        <i class="fas fa-download"></i>
+                        خروجی گرفتن از محصولات
+                    </button>
+                </div>
+            </div>
+
+            <!-- محصولات ادمین -->
+            <div id="adminProductGrid"></div>
+        </div>
+
+        <!-- بخش راهنما -->
+        <div class="help-section">
+            <h3><i class="fas fa-question-circle"></i> نیاز به کمک دارید؟</h3>
+            <p>برای راهنمایی و خرید، با پشتیبانی ما تماس بگیرید</p>
+            <div class="social-buttons">
+                <button class="btn btn-whatsapp" onclick="sendWhatsAppMessage()">
+                    <i class="fab fa-whatsapp"></i>
+                    واتس‌اپ
+                </button>
+                <button class="btn btn-telegram" onclick="sendTelegramMessage()">
+                    <i class="fab fa-telegram"></i>
+                    تلگرام
+                </button>
             </div>
         </div>
-    </section>
 
-    <!-- Admin Panel -->
-    <div class="admin-panel container" id="adminPanel">
-        <div class="admin-header">
-            <h2><i class="fas fa-crown"></i> پنل مدیریت</h2>
-            <div>
-                <button class="btn btn-primary" onclick="openAddProduct()">
-                    <i class="fas fa-plus-circle"></i>
-                    افزودن محصول جدید
-                </button>
-                <button class="btn btn-secondary" onclick="exportProducts()" style="margin-right: 15px;">
-                    <i class="fas fa-download"></i>
-                    خروجی محصولات
-                </button>
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="logo" style="justify-content: center; margin-bottom: 1rem;">
+                    <i class="fas fa-crown"></i>
+                    موناکو
+                </div>
+                <p>بوتیک تخصصی لباس‌های لوکس و شیک</p>
+                <div class="footer-links">
+                    <a href="#"><i class="fas fa-home"></i> خانه</a>
+                    <a href="#"><i class="fas fa-tshirt"></i> محصولات</a>
+                    <a href="#"><i class="fas fa-info-circle"></i> درباره ما</a>
+                    <a href="#"><i class="fas fa-phone"></i> تماس</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> راهنمای خرید</a>
+                </div>
+                <p style="margin-top: 1.5rem;">شماره تماس: ۰۹۱۲۹۵۷۳۰۹۶</p>
+                <p style="margin-top: 0.5rem;">© ۱۴۰۳ بوتیک موناکو - تمامی حقوق محفوظ است</p>
             </div>
-        </div>
-
-        <!-- محصولات ادمین -->
-        <div id="adminProductGrid"></div>
+        </footer>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>درباره موناکو</h3>
-                    <p>بوتیک موناکو با بیش از یک دهه تجربه در صنعت مد و پوشاک، متعهد به ارائه بهترین کیفیت و جدیدترین استایل‌ها به مشتریان خود است.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+    <!-- مودال نمایش محصول -->
+    <div class="modal product-modal" id="productModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-tshirt"></i> جزئیات محصول</h2>
+                <button class="close-btn" onclick="closeProductModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="image-slider" id="imageSlider">
+                    <!-- تصاویر در اینجا توسط JavaScript اضافه می‌شوند -->
+                    <button class="slider-arrow prev-arrow" onclick="prevImage()">‹</button>
+                    <button class="slider-arrow next-arrow" onclick="nextImage()">›</button>
+                    <div class="slider-nav" id="sliderNav"></div>
+                </div>
+                <div id="modalDetails"></div>
+                <div class="message-section" style="margin-top: 1.5rem;">
+                    <h4><i class="fas fa-shopping-cart"></i> برای خرید این محصول</h4>
+                    <p>از طریق واتس‌اپ یا تلگرام پیام بدهید</p>
+                    <div class="social-buttons">
+                        <button class="btn btn-whatsapp" onclick="sendWhatsAppMessage()">
+                            <i class="fab fa-whatsapp"></i>
+                            واتس‌اپ
+                        </button>
+                        <button class="btn btn-telegram" onclick="sendTelegramMessage()">
+                            <i class="fab fa-telegram"></i>
+                            تلگرام
+                        </button>
                     </div>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>لینک‌های سریع</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-left"></i> خانه</a></li>
-                        <li><a href="#products"><i class="fas fa-chevron-left"></i> محصولات</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-left"></i> درباره ما</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-left"></i> تماس با ما</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-left"></i> حریم خصوصی</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>تماس با ما</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> تهران، خیابان ولیعصر</a></li>
-                        <li><a href="tel:+989129573096"><i class="fas fa-phone"></i> ۰۹۱۲۹۵۷۳۰۹۶</a></li>
-                        <li><a href="mailto:info@monaco.com"><i class="fas fa-envelope"></i> info@monaco.com</a></li>
-                        <li><a href="#"><i class="fas fa-clock"></i> ساعت کار: ۹ صبح تا ۹ شب</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>© ۱۴۰۳ بوتیک موناکو. تمامی حقوق محفوظ است.</p>
             </div>
         </div>
-    </footer>
+    </div>
 
-    <!-- مودال‌ها -->
+    <!-- مودال ورود -->
     <div class="modal" id="loginModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2><i class="fas fa-sign-in-alt"></i> ورود به حساب کاربری</h2>
+                <h2><i class="fas fa-sign-in-alt"></i> ورود به سیستم</h2>
                 <button class="close-btn" onclick="closeModals()">×</button>
             </div>
             <div class="modal-body">
                 <form id="loginForm" class="modal-form">
                     <div class="form-group">
-                        <label class="form-label">آدرس ایمیل</label>
-                        <input type="email" id="loginEmail" class="form-control" required placeholder="example@email.com">
+                        <label>ایمیل:</label>
+                        <input type="email" id="loginEmail" required placeholder="example@email.com">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">رمز عبور</label>
-                        <input type="password" id="loginPassword" class="form-control" required placeholder="رمز عبور خود را وارد کنید">
+                        <label>رمز عبور:</label>
+                        <input type="password" id="loginPassword" required placeholder="رمز عبور خود را وارد کنید">
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
                         <i class="fas fa-sign-in-alt"></i>
-                        ورود به حساب
+                        ورود
                     </button>
                 </form>
             </div>
         </div>
     </div>
 
+    <!-- مودال ثبت‌نام -->
     <div class="modal" id="registerModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2><i class="fas fa-user-plus"></i> ایجاد حساب جدید</h2>
+                <h2><i class="fas fa-user-plus"></i> ثبت‌نام</h2>
                 <button class="close-btn" onclick="closeModals()">×</button>
             </div>
             <div class="modal-body">
                 <form id="registerForm" class="modal-form">
                     <div class="form-group">
-                        <label class="form-label">نام کامل</label>
-                        <input type="text" id="registerName" class="form-control" required placeholder="نام و نام خانوادگی">
+                        <label>نام کامل:</label>
+                        <input type="text" id="registerName" required placeholder="نام و نام خانوادگی">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">آدرس ایمیل</label>
-                        <input type="email" id="registerEmail" class="form-control" required placeholder="example@email.com">
+                        <label>ایمیل:</label>
+                        <input type="email" id="registerEmail" required placeholder="example@email.com">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">رمز عبور</label>
-                        <input type="password" id="registerPassword" class="form-control" required placeholder="حداقل ۶ کاراکتر">
+                        <label>رمز عبور:</label>
+                        <input type="password" id="registerPassword" required placeholder="حداقل ۶ کاراکتر">
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
                         <i class="fas fa-user-plus"></i>
-                        ایجاد حساب
+                        ثبت‌نام
                     </button>
                 </form>
             </div>
         </div>
     </div>
 
+    <!-- مودال افزودن محصول -->
     <div class="modal" id="addProductModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2><i class="fas fa-plus-circle"></i> افزودن محصول جدید</h2>
+                <h2><i class="fas fa-plus"></i> افزودن محصول جدید</h2>
                 <button class="close-btn" onclick="closeModals()">×</button>
             </div>
             <div class="modal-body">
                 <form id="addProductForm" class="modal-form">
                     <div class="form-group">
-                        <label class="form-label">نام محصول</label>
-                        <input type="text" id="productName" class="form-control" required placeholder="نام کامل محصول">
+                        <label>نام محصول:</label>
+                        <input type="text" id="productName" required placeholder="نام محصول">
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label">قیمت (تومان)</label>
-                        <input type="number" id="productPrice" class="form-control" required placeholder="مثال: 250000" min="1000">
+                        <label>قیمت (تومان):</label>
+                        <input type="number" id="productPrice" required placeholder="مثال: 250000" min="1000">
                     </div>
                     
                     <!-- آپلود عکس -->
-                    <div class="form-group">
-                        <label class="form-label">عکس‌های محصول</label>
-                        <div class="file-upload" id="uploadArea">
+                    <div class="image-upload-container">
+                        <label>عکس‌های محصول:</label>
+                        <div class="upload-area" id="uploadArea">
                             <i class="fas fa-cloud-upload-alt"></i>
                             <p>عکس‌ها را اینجا بکشید یا کلیک کنید</p>
-                            <p style="font-size: 0.9rem; color: var(--gray); margin-top: 0.5rem;">
+                            <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
                                 می‌توانید چند عکس آپلود کنید
                             </p>
                             <input type="file" id="imageUpload" multiple accept="image/*" style="display: none;">
                         </div>
-                        <div class="uploaded-images" id="uploadedImages" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; margin-top: 1rem;"></div>
+                        <div class="uploaded-images" id="uploadedImages"></div>
                     </div>
                     
                     <!-- انتخاب رنگ -->
-                    <div class="form-group">
-                        <label class="form-label">رنگ‌های محصول</label>
-                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
-                            <input type="text" id="colorInput" class="form-control" placeholder="نام رنگ (مثال: مشکی)" style="flex: 1;">
-                            <input type="color" id="colorPicker" value="#000000" style="width: 60px;">
-                            <button type="button" class="btn btn-primary" onclick="addColor()" style="padding: 10px 20px;">
-                                <i class="fas fa-plus"></i>
+                    <div class="color-picker-container">
+                        <label>رنگ‌های محصول:</label>
+                        <div class="color-input-group">
+                            <input type="text" id="colorInput" class="color-input" placeholder="نام رنگ (مثال: مشکی)">
+                            <input type="color" id="colorPicker" value="#000000">
+                            <button type="button" class="btn btn-small btn-primary" onclick="addColor()">
+                                <i class="fas fa-plus"></i> افزودن
                             </button>
                         </div>
-                        <div id="selectedColors" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;"></div>
+                        <div class="selected-colors" id="selectedColors"></div>
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label">سایزهای موجود</label>
-                        <input type="text" id="productSize" class="form-control" placeholder="با کاما جدا کنید، مثال: S, M, L, XL">
+                        <label>سایزهای موجود (با کاما جدا کنید):</label>
+                        <input type="text" id="productSize" placeholder="S, M, L, XL">
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label">توضیحات محصول</label>
-                        <textarea id="productDescription" class="form-control" placeholder="توضیحات کامل محصول" rows="4"></textarea>
+                        <label>توضیحات محصول:</label>
+                        <textarea id="productDescription" placeholder="توضیحات کامل محصول" rows="3"></textarea>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;">
-                        <i class="fas fa-plus-circle"></i>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                        <i class="fas fa-plus"></i>
                         افزودن محصول
                     </button>
                 </form>
@@ -1284,6 +1322,7 @@
         </div>
     </div>
 
+    <!-- مودال مدیریت تخفیف -->
     <div class="modal" id="discountModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -1330,14 +1369,12 @@
             
             // نمایش/مخفی کردن کنترل صدا
             musicToggle.addEventListener('mouseenter', function() {
-                volumeControl.style.opacity = '1';
-                volumeControl.style.width = '180px';
+                volumeControl.classList.add('show');
             });
             
             volumeControl.addEventListener('mouseleave', function(e) {
                 if (!e.relatedTarget || !e.relatedTarget.closest('.music-player')) {
-                    volumeControl.style.opacity = '0';
-                    volumeControl.style.width = '0';
+                    volumeControl.classList.remove('show');
                 }
             });
         });
@@ -1349,7 +1386,6 @@
                 backgroundMusic.pause();
                 musicToggle.classList.remove('playing');
                 musicToggle.innerHTML = '<i class="fas fa-music"></i>';
-                isMusicPlaying = false;
             } else {
                 backgroundMusic.play().then(() => {
                     isMusicPlaying = true;
@@ -1357,19 +1393,17 @@
                     musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
                 }).catch(error => {
                     console.log('خطا در پخش موسیقی:', error);
-                    // درخواست اجازه از کاربر
-                    if (confirm('برای پخش موسیقی نیاز به اجازه شماست. آیا اجازه می‌دهید؟')) {
-                        document.body.addEventListener('click', function playOnClick() {
-                            backgroundMusic.play().then(() => {
-                                isMusicPlaying = true;
-                                musicToggle.classList.add('playing');
-                                musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
-                            });
-                            document.body.removeEventListener('click', playOnClick);
-                        }, { once: true });
-                    }
+                    document.addEventListener('click', function playOnClick() {
+                        backgroundMusic.play().then(() => {
+                            isMusicPlaying = true;
+                            musicToggle.classList.add('playing');
+                            musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+                        });
+                        document.removeEventListener('click', playOnClick);
+                    }, { once: true });
                 });
             }
+            isMusicPlaying = !isMusicPlaying;
         }
 
         // ========== توابع عمومی ==========
@@ -1409,9 +1443,6 @@
         function toggleAdminPanel() {
             const panel = document.getElementById('adminPanel');
             panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-            if (panel.style.display === 'block') {
-                displayProducts();
-            }
         }
 
         // ========== سیستم آپلود عکس ==========
@@ -1420,7 +1451,7 @@
             const imageUpload = document.getElementById('imageUpload');
             const uploadedImagesContainer = document.getElementById('uploadedImages');
             
-            // اجازه انتخاب چند فایل
+            // ✅ اجازه انتخاب چند فایل
             imageUpload.setAttribute('multiple', 'multiple');
             
             // کلیک روی آپلود اریا
@@ -1431,19 +1462,16 @@
             // Drag and Drop
             uploadArea.addEventListener('dragover', (e) => {
                 e.preventDefault();
-                uploadArea.style.borderColor = 'var(--success)';
-                uploadArea.style.background = '#e8f5e9';
+                uploadArea.classList.add('dragover');
             });
             
             uploadArea.addEventListener('dragleave', () => {
-                uploadArea.style.borderColor = 'var(--gray-light)';
-                uploadArea.style.background = 'rgba(231, 76, 60, 0.02)';
+                uploadArea.classList.remove('dragover');
             });
             
             uploadArea.addEventListener('drop', (e) => {
                 e.preventDefault();
-                uploadArea.style.borderColor = 'var(--gray-light)';
-                uploadArea.style.background = 'rgba(231, 76, 60, 0.02)';
+                uploadArea.classList.remove('dragover');
                 const files = Array.from(e.dataTransfer.files);
                 handleImageFiles(files);
             });
@@ -1475,15 +1503,10 @@
                 uploadedImagesContainer.innerHTML = '';
                 uploadedImages.forEach((imageData, index) => {
                     const imgDiv = document.createElement('div');
-                    imgDiv.style.position = 'relative';
-                    imgDiv.style.width = '100px';
-                    imgDiv.style.height = '100px';
-                    imgDiv.style.borderRadius = '8px';
-                    imgDiv.style.overflow = 'hidden';
-                    imgDiv.style.border = '2px solid #eee';
+                    imgDiv.className = 'uploaded-image';
                     imgDiv.innerHTML = `
-                        <img src="${imageData}" alt="تصویر ${index + 1}" style="width: 100%; height: 100%; object-fit: cover;">
-                        <button onclick="removeImage(${index})" style="position: absolute; top: 5px; left: 5px; background: rgba(220, 53, 69, 0.9); color: white; border: none; border-radius: 50%; width: 24px; height: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">
+                        <img src="${imageData}" alt="تصویر ${index + 1}">
+                        <button class="remove-image" onclick="removeImage(${index})">
                             <i class="fas fa-times"></i>
                         </button>
                     `;
@@ -1494,23 +1517,22 @@
 
         function removeImage(index) {
             uploadedImages.splice(index, 1);
-            const uploadedImagesContainer = document.getElementById('uploadedImages');
-            uploadedImagesContainer.innerHTML = '';
-            uploadedImages.forEach((imageData, i) => {
+            displayUploadedImages();
+        }
+
+        function displayUploadedImages() {
+            const container = document.getElementById('uploadedImages');
+            container.innerHTML = '';
+            uploadedImages.forEach((imageData, index) => {
                 const imgDiv = document.createElement('div');
-                imgDiv.style.position = 'relative';
-                imgDiv.style.width = '100px';
-                imgDiv.style.height = '100px';
-                imgDiv.style.borderRadius = '8px';
-                imgDiv.style.overflow = 'hidden';
-                imgDiv.style.border = '2px solid #eee';
+                imgDiv.className = 'uploaded-image';
                 imgDiv.innerHTML = `
-                    <img src="${imageData}" alt="تصویر ${i + 1}" style="width: 100%; height: 100%; object-fit: cover;">
-                    <button onclick="removeImage(${i})" style="position: absolute; top: 5px; left: 5px; background: rgba(220, 53, 69, 0.9); color: white; border: none; border-radius: 50%; width: 24px; height: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">
+                    <img src="${imageData}" alt="تصویر ${index + 1}">
+                    <button class="remove-image" onclick="removeImage(${index})">
                         <i class="fas fa-times"></i>
                     </button>
                 `;
-                uploadedImagesContainer.appendChild(imgDiv);
+                container.appendChild(imgDiv);
             });
         }
 
@@ -1548,17 +1570,11 @@
             
             selectedColors.forEach((color, index) => {
                 const colorItem = document.createElement('div');
-                colorItem.style.display = 'flex';
-                colorItem.style.alignItems = 'center';
-                colorItem.style.gap = '0.5rem';
-                colorItem.style.background = '#f8f9fa';
-                colorItem.style.padding = '0.3rem 0.8rem';
-                colorItem.style.borderRadius = '20px';
-                colorItem.style.fontSize = '0.9rem';
+                colorItem.className = 'color-item';
                 colorItem.innerHTML = `
-                    <div style="width: 20px; height: 20px; border-radius: 50%; background-color: ${color.value}; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></div>
+                    <div class="color-preview" style="background-color: ${color.value};"></div>
                     <span>${color.name}</span>
-                    <button onclick="removeColor(${index})" style="background: none; border: none; color: var(--danger); cursor: pointer; font-size: 0.8rem; padding: 0 0.3rem;">
+                    <button class="remove-color" onclick="removeColor(${index})">
                         <i class="fas fa-times"></i>
                     </button>
                 `;
@@ -1571,7 +1587,7 @@
             displaySelectedColors();
         }
 
-        // ========== سیستم تماس ==========
+        // ========== سیستم موبایل و تماس ==========
         function sendWhatsAppMessage() {
             const phoneNumber = "989129573096";
             const message = "سلام! 👋\nمی‌خواهم از بوتیک موناکو خرید کنم.\nلطفاً راهنمایی ام کنید.";
@@ -1595,16 +1611,6 @@
                   "📞 شماره تماس: ۰۹۱۲۹۵۷۳۰۹۶\n" +
                   "💬 واتس‌اپ: همین شماره\n" +
                   "📱 تلگرام: همین شماره");
-        }
-
-        function showContactInfo() {
-            alert("📞 اطلاعات تماس بوتیک موناکو:\n\n" +
-                  "شماره تماس: ۰۹۱۲۹۵۷۳۰۹۶\n" +
-                  "واتس‌اپ: همین شماره\n" +
-                  "تلگرام: همین شماره\n\n" +
-                  "ساعات پاسخگویی:\n" +
-                  "📅 همه روزه\n" +
-                  "⏰ ۹ صبح تا ۹ شب");
         }
 
         // ========== سیستم همگام‌سازی ==========
@@ -1660,8 +1666,8 @@
                 
                 <form id="discountForm" class="modal-form">
                     <div class="form-group">
-                        <label class="form-label">آیا تخفیف دارد؟</label>
-                        <select id="hasDiscount" class="form-control">
+                        <label>آیا تخفیف دارد؟</label>
+                        <select id="hasDiscount" style="width: 100%;">
                             <option value="false" ${!product.discount?.hasDiscount ? 'selected' : ''}>خیر</option>
                             <option value="true" ${product.discount?.hasDiscount ? 'selected' : ''}>بله</option>
                         </select>
@@ -1669,12 +1675,16 @@
                     
                     <div id="discountFields" style="${!product.discount?.hasDiscount ? 'display: none;' : ''} margin-top: 1rem;">
                         <div class="form-group">
-                            <label class="form-label">دلیل تخفیف</label>
-                            <input type="text" id="discountReason" class="form-control" value="${product.discount?.reason || ''}" placeholder="مثال: شگفت‌انگیز، فصلی، ویژه، حراج">
+                            <label>دلیل تخفیف (دستی وارد کنید):</label>
+                            <input type="text" id="discountReason" value="${product.discount?.reason || ''}" 
+                                   placeholder="مثال: شگفت‌انگیز، فصلی، ویژه، حراج">
                         </div>
                         <div class="form-group">
-                            <label class="form-label">قیمت پس از تخفیف (تومان)</label>
-                            <input type="number" id="discountedPrice" class="form-control" value="${product.discount?.discountedPrice || product.price}" min="1000" max="${product.price}" placeholder="${product.price}">
+                            <label>قیمت پس از تخفیف (تومان):</label>
+                            <input type="number" id="discountedPrice" 
+                                   value="${product.discount?.discountedPrice || product.price}" 
+                                   min="1000" max="${product.price}" 
+                                   placeholder="${product.price}">
                             <small style="color: #666; display: block; margin-top: 0.3rem;">
                                 قیمت باید کمتر از ${product.price.toLocaleString()} تومان باشد
                             </small>
@@ -1752,18 +1762,18 @@
             
             if (products.length === 0) {
                 productGrid.innerHTML = `
-                    <div style="text-align: center; padding: 3rem 1rem; grid-column: 1 / -1;">
-                        <i class="fas fa-tshirt" style="font-size: 4rem; color: #ddd; margin-bottom: 1rem;"></i>
-                        <h3 style="color: var(--secondary);">هنوز محصولی وجود ندارد</h3>
-                        <p style="color: var(--gray); margin-top: 0.5rem;">برای افزودن محصول وارد پنل مدیریت شوید</p>
+                    <div class="empty-message">
+                        <i class="fas fa-tshirt"></i>
+                        <h3>هنوز محصولی وجود ندارد</h3>
+                        <p>برای افزودن محصول وارد پنل مدیریت شوید</p>
                     </div>
                 `;
                 
                 adminProductGrid.innerHTML = `
-                    <div style="text-align: center; padding: 3rem 1rem;">
-                        <i class="fas fa-box-open" style="font-size: 4rem; color: #ddd; margin-bottom: 1rem;"></i>
-                        <h3 style="color: var(--secondary);">محصولی برای مدیریت وجود ندارد</h3>
-                        <p style="color: var(--gray); margin-top: 0.5rem;">برای شروع، اولین محصول خود را اضافه کنید</p>
+                    <div class="empty-message">
+                        <i class="fas fa-box-open"></i>
+                        <h3>محصولی برای مدیریت وجود ندارد</h3>
+                        <p>برای شروع، اولین محصول خود را اضافه کنید</p>
                     </div>
                 `;
                 return;
@@ -1777,36 +1787,35 @@
                 
                 let priceHTML = '';
                 if (product.discount?.hasDiscount && product.discount.discountedPrice > 0) {
-                    const discountPercent = Math.round((1 - product.discount.discountedPrice / product.price) * 100);
                     priceHTML = `
                         <div class="price-container">
-                            <div class="current-price">${product.discount.discountedPrice.toLocaleString()} تومان</div>
-                            <div class="original-price">${product.price.toLocaleString()} تومان</div>
-                            <div class="discount-percentage">${discountPercent}% تخفیف</div>
+                            <span class="discount-price">${product.discount.discountedPrice.toLocaleString()} تومان</span>
+                            <span class="original-price">${product.price.toLocaleString()} تومان</span>
+                            <span class="discount-reason">${product.discount.reason}</span>
                         </div>
                     `;
                 } else {
                     priceHTML = `
                         <div class="price-container">
-                            <div class="current-price">${product.price.toLocaleString()} تومان</div>
+                            <span class="regular-price">${product.price.toLocaleString()} تومان</span>
                         </div>
                     `;
                 }
                 
                 productCard.innerHTML = `
-                    ${product.discount?.hasDiscount ? '<div class="product-badge sale">تخفیف ویژه</div>' : '<div class="product-badge new">جدید</div>'}
+                    ${product.discount?.hasDiscount ? '<div class="discount-badge">تخفیف</div>' : ''}
                     <div class="product-image-container">
-                        <img src="${product.images?.[0] || 'https://via.placeholder.com/400x300/eee/666?text=محصول+موناکو'}" 
+                        <img src="${product.images?.[0] || product.image || 'https://via.placeholder.com/300x250?text=محصول+موناکo'}" 
                              alt="${product.name}" class="product-image">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">${product.name}</h3>
-                        <p class="product-description">${product.description || 'محصولی شیک و با کیفیت از مجموعه موناکو'}</p>
+                        <div class="product-title">${product.name}</div>
                         ${priceHTML}
                         ${product.colors && product.colors.length > 0 ? `
                         <div class="product-colors">
                             ${product.colors.map(color => `
-                                <div class="color-option" style="background-color: ${color.value || color};" title="${color.name || color}"></div>
+                                <div class="color-circle" style="background-color: ${color.value || color};" 
+                                     title="${color.name || color}"></div>
                             `).join('')}
                         </div>
                         ` : ''}
@@ -1824,7 +1833,7 @@
             });
             
             // نمایش برای ادمین
-            adminProductGrid.innerHTML = '<h3 style="margin-bottom: 1rem; color: var(--secondary);">محصولات برای مدیریت:</h3>';
+            adminProductGrid.innerHTML = '<h3 style="margin-bottom: 1rem;">محصولات برای مدیریت:</h3>';
             const adminGrid = document.createElement('div');
             adminGrid.className = 'product-grid';
             adminProductGrid.appendChild(adminGrid);
@@ -1833,31 +1842,24 @@
                 const productCard = document.createElement('div');
                 productCard.className = 'product-card';
                 
-                let priceHTML = '';
-                if (product.discount?.hasDiscount && product.discount.discountedPrice > 0) {
-                    priceHTML = `
-                        <div class="price-container">
-                            <div class="current-price">${product.discount.discountedPrice.toLocaleString()} تومان</div>
-                            <div class="original-price">${product.price.toLocaleString()} تومان</div>
-                            <small style="color: var(--success); font-weight: 600;">${product.discount.reason}</small>
-                        </div>
-                    `;
-                } else {
-                    priceHTML = `
-                        <div class="price-container">
-                            <div class="current-price">${product.price.toLocaleString()} تومان</div>
-                        </div>
-                    `;
-                }
-                
                 productCard.innerHTML = `
                     <div class="product-image-container">
-                        <img src="${product.images?.[0] || 'https://via.placeholder.com/400x300'}" 
+                        <img src="${product.images?.[0] || product.image || 'https://via.placeholder.com/300x250'}" 
                              alt="${product.name}" class="product-image">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">${product.name}</h3>
-                        ${priceHTML}
+                        <div class="product-title">${product.name}</div>
+                        <div class="price-container">
+                            <span class="${product.discount?.hasDiscount ? 'discount-price' : 'regular-price'}">
+                                ${product.discount?.hasDiscount ? 
+                                  product.discount.discountedPrice.toLocaleString() : 
+                                  product.price.toLocaleString()} تومان
+                            </span>
+                            ${product.discount?.hasDiscount ? `
+                                <span class="original-price">${product.price.toLocaleString()} تومان</span>
+                                <span class="discount-reason">${product.discount.reason}</span>
+                            ` : ''}
+                        </div>
                         <div class="product-actions">
                             <button class="btn btn-primary" onclick="showProductDetails(${product.id})">
                                 <i class="fas fa-eye"></i> مشاهده
@@ -1929,15 +1931,155 @@
             const product = products.find(p => p.id === productId);
             if (!product) return;
 
-            alert(`📋 جزئیات محصول:\n\n` +
-                  `🏷️ نام: ${product.name}\n` +
-                  `💰 قیمت: ${product.price.toLocaleString()} تومان\n` +
-                  (product.discount?.hasDiscount ? 
-                  `🎯 قیمت با تخفیف: ${product.discount.discountedPrice.toLocaleString()} تومان\n` +
-                  `📝 دلیل تخفیف: ${product.discount.reason}\n` : '') +
-                  (product.size ? `📏 سایزهای موجود: ${product.size}\n` : '') +
-                  (product.description ? `📖 توضیحات: ${product.description}\n` : '') +
-                  `\nبرای خرید این محصول از دکمه‌های واتس‌اپ یا تلگرام استفاده کنید.`);
+            currentProductImages = product.images || [];
+            currentImageIndex = 0;
+
+            // آپدیت اسلایدر
+            const slider = document.getElementById('imageSlider');
+            const nav = document.getElementById('sliderNav');
+            
+            slider.innerHTML = '';
+            nav.innerHTML = '';
+            
+            currentProductImages.forEach((img, index) => {
+                const imgElement = document.createElement('img');
+                imgElement.src = img;
+                imgElement.className = `slider-image ${index === 0 ? 'active' : ''}`;
+                imgElement.alt = `${product.name} - تصویر ${index + 1}`;
+                slider.appendChild(imgElement);
+                
+                const dot = document.createElement('div');
+                dot.className = `slider-dot ${index === 0 ? 'active' : ''}`;
+                dot.onclick = () => changeImage(index);
+                nav.appendChild(dot);
+            });
+            
+            // اضافه کردن دکمه‌های ناوبری
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'slider-arrow prev-arrow';
+            prevBtn.innerHTML = '‹';
+            prevBtn.onclick = (e) => { e.stopPropagation(); prevImage(); };
+            
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'slider-arrow next-arrow';
+            nextBtn.innerHTML = '›';
+            nextBtn.onclick = (e) => { e.stopPropagation(); nextImage(); };
+            
+            slider.appendChild(prevBtn);
+            slider.appendChild(nextBtn);
+            slider.appendChild(nav);
+
+            // آپدیت جزئیات
+            const modalDetails = document.getElementById('modalDetails');
+            let priceHTML = '';
+            if (product.discount?.hasDiscount && product.discount.discountedPrice > 0) {
+                priceHTML = `
+                    <div style="background: #e8f5e9; padding: 1rem; border-radius: 10px; margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="color: #666;">قیمت اصلی:</span>
+                            <span style="text-decoration: line-through; color: #999;">
+                                ${product.price.toLocaleString()} تومان
+                            </span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 1.2rem;">
+                            <span style="color: var(--success); font-weight: bold;">قیمت با تخفیف:</span>
+                            <span style="color: var(--success); font-weight: bold;">
+                                ${product.discount.discountedPrice.toLocaleString()} تومان
+                            </span>
+                        </div>
+                        ${product.discount.reason ? `
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <span style="background: var(--success); color: white; padding: 0.3rem 0.8rem; border-radius: 15px;">
+                                ${product.discount.reason}
+                            </span>
+                        </div>
+                        ` : ''}
+                    </div>
+                `;
+            } else {
+                priceHTML = `
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 10px; margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; font-size: 1.2rem;">
+                            <span style="color: var(--primary); font-weight: bold;">قیمت:</span>
+                            <span style="color: var(--primary); font-weight: bold;">
+                                ${product.price.toLocaleString()} تومان
+                            </span>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            modalDetails.innerHTML = `
+                <h2 style="margin-bottom: 1rem; color: var(--secondary);">${product.name}</h2>
+                ${priceHTML}
+                ${product.colors && product.colors.length > 0 ? `
+                <div style="margin-bottom: 1rem;">
+                    <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">
+                        <i class="fas fa-palette"></i> رنگ‌های موجود:
+                    </h4>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        ${product.colors.map(color => `
+                            <div style="display: flex; align-items: center; gap: 0.3rem;">
+                                <div style="width: 20px; height: 20px; border-radius: 50%; background-color: ${color.value || color}; border: 1px solid #ddd;"></div>
+                                <span style="font-size: 0.9rem;">${color.name || color}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                ` : ''}
+                ${product.size ? `
+                <div style="margin-bottom: 1rem;">
+                    <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">
+                        <i class="fas fa-ruler-combined"></i> سایزهای موجود:
+                    </h4>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        ${product.size.split(',').map(s => `
+                            <span style="background: #e3f2fd; color: #1565c0; padding: 0.3rem 0.8rem; border-radius: 5px;">
+                                ${s.trim()}
+                            </span>
+                        `).join('')}
+                    </div>
+                </div>
+                ` : ''}
+                ${product.description ? `
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">
+                        <i class="fas fa-info-circle"></i> توضیحات:
+                    </h4>
+                    <p style="line-height: 1.6; color: #555;">${product.description}</p>
+                </div>
+                ` : ''}
+            `;
+
+            document.getElementById('productModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function changeImage(index) {
+            const images = document.querySelectorAll('.slider-image');
+            const dots = document.querySelectorAll('.slider-dot');
+            
+            images.forEach(img => img.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            images[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentImageIndex = index;
+        }
+
+        function nextImage() {
+            const nextIndex = (currentImageIndex + 1) % currentProductImages.length;
+            changeImage(nextIndex);
+        }
+
+        function prevImage() {
+            const prevIndex = (currentImageIndex - 1 + currentProductImages.length) % currentProductImages.length;
+            changeImage(prevIndex);
+        }
+
+        function closeProductModal() {
+            document.getElementById('productModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
 
         // ========== مدیریت محصولات ==========
@@ -1947,6 +2089,15 @@
                 localStorage.setItem('monaco_products', JSON.stringify(products));
                 displayProducts();
                 alert("✅ محصول با موفقیت حذف شد!");
+            }
+        }
+
+        function deleteAllProducts() {
+            if (confirm('⚠️ آیا از حذف تمام محصولات اطمینان دارید؟ این عمل قابل بازگشت نیست!')) {
+                products = [];
+                localStorage.setItem('monaco_products', JSON.stringify(products));
+                displayProducts();
+                alert("✅ تمام محصولات حذف شدند!");
             }
         }
 
@@ -2018,8 +2169,8 @@
         }
 
         function updateUI() {
-            const loginBtn = document.querySelector('.btn-secondary[onclick="openLogin()"]');
-            const registerBtn = document.querySelector('.btn-primary[onclick="openRegister()"]');
+            const loginBtn = document.querySelector('.btn-primary[onclick="openRegister()"]');
+            const registerBtn = document.querySelector('.btn-secondary[onclick="openLogin()"]');
             const adminBtn = document.getElementById('adminBtn');
             const logoutBtn = document.getElementById('logoutBtn');
             const adminPanel = document.getElementById('adminPanel');
@@ -2030,9 +2181,11 @@
                 logoutBtn.style.display = 'block';
                 
                 if (currentUser.isAdmin) {
+                    // فقط مدیر ببیند
                     adminBtn.style.display = 'block';
                     adminPanel.style.display = 'block';
                 } else {
+                    // کاربران عادی نبینند
                     adminBtn.style.display = 'none';
                     adminPanel.style.display = 'none';
                 }
@@ -2060,7 +2213,15 @@
         document.addEventListener('DOMContentLoaded', function() {
             updateUI();
             displayProducts();
+            
+            // ❌ هیچ محصول نمونه‌ای اضافه نمی‌شود
+            // localStorage خالی است
         });
+
+        // ========== توابع کمکی ==========
+        function formatPrice(price) {
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " تومان";
+        }
     </script>
 </body>
 </html>
