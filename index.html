@@ -455,6 +455,7 @@
 
         /* Sections دیگر */
         .message-section,
+        .user-import-section,
         .help-section {
             padding: 1.5rem;
             border-radius: var(--border-radius);
@@ -465,6 +466,11 @@
         .message-section {
             background: linear-gradient(135deg, #d4edda, #c3e6cb);
             border-right: 4px solid var(--success);
+        }
+
+        .user-import-section {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-right: 4px solid #2196f3;
         }
 
         .help-section {
@@ -1387,12 +1393,14 @@
                 musicToggle.classList.remove('playing');
                 musicToggle.innerHTML = '<i class="fas fa-music"></i>';
             } else {
+                // درخواست تعامل کاربر برای پخش موسیقی
                 backgroundMusic.play().then(() => {
                     isMusicPlaying = true;
                     musicToggle.classList.add('playing');
                     musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
                 }).catch(error => {
                     console.log('خطا در پخش موسیقی:', error);
+                    // اگر خطا داد، روی کلیک کاربر پخش شود
                     document.addEventListener('click', function playOnClick() {
                         backgroundMusic.play().then(() => {
                             isMusicPlaying = true;
@@ -1450,9 +1458,6 @@
             const uploadArea = document.getElementById('uploadArea');
             const imageUpload = document.getElementById('imageUpload');
             const uploadedImagesContainer = document.getElementById('uploadedImages');
-            
-            // ✅ اجازه انتخاب چند فایل
-            imageUpload.setAttribute('multiple', 'multiple');
             
             // کلیک روی آپلود اریا
             uploadArea.addEventListener('click', () => {
@@ -1518,22 +1523,6 @@
         function removeImage(index) {
             uploadedImages.splice(index, 1);
             displayUploadedImages();
-        }
-
-        function displayUploadedImages() {
-            const container = document.getElementById('uploadedImages');
-            container.innerHTML = '';
-            uploadedImages.forEach((imageData, index) => {
-                const imgDiv = document.createElement('div');
-                imgDiv.className = 'uploaded-image';
-                imgDiv.innerHTML = `
-                    <img src="${imageData}" alt="تصویر ${index + 1}">
-                    <button class="remove-image" onclick="removeImage(${index})">
-                        <i class="fas fa-times"></i>
-                    </button>
-                `;
-                container.appendChild(imgDiv);
-            });
         }
 
         // ========== سیستم انتخاب رنگ ==========
@@ -2181,11 +2170,9 @@
                 logoutBtn.style.display = 'block';
                 
                 if (currentUser.isAdmin) {
-                    // فقط مدیر ببیند
                     adminBtn.style.display = 'block';
                     adminPanel.style.display = 'block';
                 } else {
-                    // کاربران عادی نبینند
                     adminBtn.style.display = 'none';
                     adminPanel.style.display = 'none';
                 }
@@ -2214,8 +2201,53 @@
             updateUI();
             displayProducts();
             
-            // ❌ هیچ محصول نمونه‌ای اضافه نمی‌شود
-            // localStorage خالی است
+            // اضافه کردن دیتای نمونه برای تست
+            if (products.length === 0) {
+                products = [
+                    {
+                        id: 1,
+                        name: "پیراهن مردانه مدل موناکو",
+                        price: 350000,
+                        images: [
+                            "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=300&h=400&fit=crop",
+                            "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=300&h=400&fit=crop&crop=face",
+                            "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=300&h=400&fit=crop&crop=left"
+                        ],
+                        colors: [
+                            { name: "مشکی", value: "#000000" },
+                            { name: "سرمه‌ای", value: "#2C3E50" },
+                            { name: "خاکستری", value: "#7F8C8D" }
+                        ],
+                        size: "M,L,XL",
+                        description: "پیراهن مردانه با کیفیت عالی، مناسب برای مجالس مهم"
+                    },
+                    {
+                        id: 2,
+                        name: "پیراهن زنانه شیک",
+                        price: 420000,
+                        discount: {
+                            hasDiscount: true,
+                            reason: "شگفت‌انگیز",
+                            discountedPrice: 299000
+                        },
+                        images: [
+                            "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=300&h=400&fit=crop",
+                            "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=300&h=400&fit=crop&crop=right"
+                        ],
+                        colors: [
+                            { name: "قرمز", value: "#E74C3C" },
+                            { name: "سفید", value: "#FFFFFF" },
+                            { name: "طلایی", value: "#F39C12" }
+                        ],
+                        size: "S,M,L",
+                        description: "پیراهن زنانه با طراحی مدرن و شیک"
+                    }
+                ];
+                localStorage.setItem('monaco_products', JSON.stringify(products));
+                displayProducts();
+            }
+            
+            console.log('فروشگاه موناکو با موفقیت بارگذاری شد!');
         });
 
         // ========== توابع کمکی ==========
